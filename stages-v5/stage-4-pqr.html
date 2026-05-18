@@ -1,70 +1,115 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 4: PQR — MAKA ERP v5</title>
-<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB;--purple:#7C3AED}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:720px;width:100%}.header{background:var(--purple);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:rgba(255,255,255,.2);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.done{background:var(--green)}.prog-dot.active{background:var(--purple);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#F5F3FF;border-bottom:1px solid #C4B5FD;padding:10px 24px;font-size:13px;color:#5B21B6;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .v4{color:#DC2626;font-size:10px;margin-left:4px}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 3px rgba(124,58,237,.1)}.field textarea{resize:vertical;min-height:70px}.field input.readonly{background:#F5F3FF;border-style:dashed;color:var(--gray)}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--purple);color:white}.btn-outline{background:white;color:var(--purple);border:1.5px solid var(--purple)}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}.mandatory-note{background:#FEF2F2;border:1px solid #FECACA;padding:10px 14px;border-radius:8px;font-size:12px;margin:12px 24px}.delta-box{background:#F5F3FF;border:1px solid #C4B5FD;padding:10px 14px;border-radius:8px;font-size:11px;margin:0 24px 16px}table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--light);text-align:left;padding:6px 10px}td{padding:4px 10px;border-bottom:1px solid var(--border)}@media(max-width:600px){.form-row,.form-row.cols-3{grid-template-columns:1fr}}</style></head><body>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 4: PQR Submission — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:760px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:#7C3AED;color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.top-bar{padding:12px 24px;border-bottom:1px solid var(--border);text-align:left}.top-bar a{background:var(--blue);color:white;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;display:inline-block}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:#7C3AED}.field input.readonly{background:#F5F3FF;border-style:dashed;color:var(--gray)}.field textarea{resize:vertical;min-height:70px}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.auto-tag{font-size:9px;background:#EDE9FE;color:#6D28D9;padding:1px 6px;border-radius:4px;margin-left:4px}.file-upload{border:2px dashed var(--border);border-radius:8px;padding:24px;text-align:center;color:var(--gray);font-size:13px;cursor:pointer}.file-upload:hover{border-color:#7C3AED}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;text-decoration:none;display:inline-block}.btn-primary{background:#7C3AED;color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}@media(max-width:600px){.form-row,.form-row.cols-3{grid-template-columns:1fr}}</style></head><body>
 <div class="page">
-<div class="header"><div class="num">4</div><div><h1>PQR Submission</h1><div class="sub">Stage 4/9 &nbsp;|&nbsp; 🆕 v5: Dual PQR Entry — Unit Problem & Accident</div></div></div>
-<div class="progress">
-<div class="prog-dot done"></div><span class="prog-label">Receive</span>
-<div class="prog-dot done"></div><span class="prog-label">Ticket</span>
-<div class="prog-dot done"></div><span class="prog-label">Analisa</span>
-<div class="prog-dot active"></div><span class="prog-label active">PQR</span>
-<div class="prog-dot"></div><span class="prog-label">Parts</span>
-<div class="prog-dot"></div><span class="prog-label">Repair</span>
-<div class="prog-dot"></div><span class="prog-label">QC</span>
-<div class="prog-dot"></div><span class="prog-label">Handover</span>
-<div class="prog-dot"></div><span class="prog-label">Selesai</span>
+<div class="header"><div class="num">4</div><div><h1>PQR Submission</h1><div class="sub">Stage 4/9 | Product Quality Report — Warranty Claim</div></div></div>
+<div class="card">
+<div class="top-bar"><a href="index.html">← Back to Index</a></div>
+
+<div class="section-title">📋 Info Unit & Customer <span style="font-size:10px;color:#6D28D9">Auto-fill dari Stage 1-3</span></div>
+<div class="form">
+<div class="form-row cols-3">
+<div class="field"><label>Frame Number (VIN)</label><input type="text" value="MKMAAB2C0SJ000525" class="readonly" readonly></div>
+<div class="field"><label>Engine Number</label><input type="text" value="YN72V4000W45H250120770" class="readonly" readonly></div>
+<div class="field"><label>Color</label><input type="text" value="Stallion Black" class="readonly" readonly></div>
 </div>
-<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:left"><a href="index.html" style="background:var(--blue);color:white;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
-<div class="info-banner">📋 <strong>PQR (Product Quality Report)</strong> — 🆕 v5: PQR sekarang mandatory untuk <strong>2 track</strong>: (1) Unit Problem setelah Analisa, (2) Unit Accident setelah Parts Estimation DINA → Aftersales Process.</div>
-<div class="mandatory-note">🚫 <strong>Mandatory Gate:</strong> Parts & Repair terkunci sampai PQR di-submit. Track: Unit Problem → PQR | Unit Accident → DINA → PQR.</div>
+<div class="form-row">
+<div class="field"><label>Customer Type</label><input type="text" value="RTO TransGo" class="readonly" readonly></div>
+<div class="field"><label>Customer Name</label><input type="text" value="PT. TRANSGO" class="readonly" readonly></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Phone Number</label><input type="text" value="081234567890" class="readonly" readonly></div>
+<div class="field"><label>Address</label><input type="text" value="Jl. Raya Pasar Rebo No. 88, Jakarta Timur" class="readonly" readonly></div>
+</div>
+<div class="form-row cols-3">
+<div class="field"><label>STU Date</label><input type="date" value="2025-08-06" class="readonly" readonly></div>
+<div class="field"><label>Date of Damage</label><input type="date" value="2026-05-10"></div>
+<div class="field"><label>Mileage (ODO)</label><input type="text" value="12.450 Km" class="readonly" readonly></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Dealer Name</label><input type="text" value="MAKA Motors — Pasar Rebo"></div>
+<div class="field"><label>Dealer Area</label><input type="text" value="Jakarta Timur"></div>
+</div>
+<div class="form-row">
+<div class="field"><label>PIC Email</label><input type="email" value="rico@maka-motors.com"></div>
+<div class="field"><label>TRB Number</label><input type="text" value="TRB-128" class="readonly" readonly></div>
+</div>
+</div>
 
-<div class="delta-box"><strong>🆕 v5 Update:</strong> PQR sekarang punya <strong>dua entry point</strong> — dari Analisa Unit Problem (regular) dan dari Aftersales Process (accident). Pilih "PQR Source" di bawah sesuai track.</div>
-
-<div class="section-title">📋 Data PQR</div>
+<div class="section-title">🔍 Problem Details</div>
 <div class="form">
 <div class="form-row">
-<div class="field"><label>No PQR <span class="v4">Auto</span></label><input type="text" value="PQR-2026-089" class="readonly" readonly></div>
-<div class="field"><label>Tgl PQR</label><input type="date" value="2026-05-13"></div>
+<div class="field"><label>Problem Title <span class="auto-tag">Auto</span></label><input type="text" value="Motor mati (total power off)" class="readonly" readonly></div>
+<div class="field"><label>Severity Level</label><select><option value="">Pilih severity...</option><option>Critical — Safety Risk</option><option selected>High — Vehicle Not Operational</option><option>Medium — Performance Affected</option><option>Low — Cosmetic / Minor</option></select></div>
 </div>
 <div class="form-row">
-<div class="field"><label>PQR Source <span class="v4">🆕 v5</span></label><select><option selected>Analisa Unit Problem (Regular Repair)</option><option>Analisa Unit Accident → DINA → Aftersales Process</option></select><span class="hint">Menentukan track PQR di flow. Keduanya mandatory.</span></div>
-<div class="field"><label>Track Unit <span class="v4">🆕 v5</span></label><input type="text" value="Unit Problem → EV Core → KC" class="readonly" readonly></div>
+<div class="field"><label>Likelihood Problem</label><select><option value="">Pilih likelihood...</option><option>Always / Every Ride</option><option selected>Frequent</option><option>Intermittent</option><option>Rare / Once</option></select></div>
+<div class="field"><label>Issue Category</label><input type="text" value="EV Core — E-motor" class="readonly" readonly></div>
 </div>
 <div class="form-row">
-<div class="field"><label>Tipe Defect</label><select><option selected>Component Failure</option><option>Manufacturing Defect</option><option>Wear & Tear</option><option>User Error</option><option>External Damage</option></select></div>
-<div class="field"><label>Severity</label><select><option>Critical — Safety</option><option selected>Major — Functional</option><option>Minor — Cosmetic</option></select></div>
+<div class="field"><label>The Usage of EV</label><select><option value="">Pilih penggunaan...</option><option selected>Daily Rental (RTO)</option><option>Personal Use (Retail)</option><option>Company Fleet (Asset)</option></select></div>
+<div class="field"><label>The Usual Parking Spot</label><select><option value="">Pilih lokasi parkir...</option><option selected>Outdoor — Open Space</option><option>Indoor — Garage</option><option>Semi-Outdoor — Canopy</option><option>Roadside / Street</option></select></div>
 </div>
-<div class="form-row">
-<div class="field"><label>Root Cause</label><select><option>Design Issue</option><option>Material Defect</option><option selected>Overheating / Thermal</option><option>Assembly Error</option><option>Water Ingress</option><option>Unknown</option></select></div>
-<div class="field"><label>Part Terkait</label><input type="text" value="E-Motor Assembly (Stator)"></div>
+<div class="form-row cols-1">
+<div class="field"><label>Symptoms Explanation <span style="font-size:10px;color:var(--gray)">(Tulis semua keluhan dari customer)</span></label><textarea placeholder="Jelaskan gejala secara detail...">Motor mati total saat digunakan di jalan. Display sempat menyala lalu mati. Tidak ada suara saat dinyalakan kembali. Sebelumnya motor terasa panas berlebih. Tidak ada indikator error yang muncul sebelumnya.</textarea></div>
 </div>
-<div class="form-row">
-<div class="field"><label>Supplier</label><input type="text" placeholder="Nama supplier..."></div>
-<div class="field"><label>PIC PQR</label><input type="text" value="Rico (KC E-Motor Specialist)"></div>
-</div>
-<div class="form-row">
-<div class="field"><label>Eskalasi ke Principal?</label><select><option>Belum</option><option selected>Ya — defect berulang</option><option>Tidak</option></select></div>
-<div class="field"><label>Foto Defect <span class="v4">⚠️ Baru</span></label><div style="display:flex;gap:8px;align-items:center;padding-top:4px"><button class="btn btn-outline" style="font-size:11px;padding:6px 10px">📎 Upload</button><span style="font-size:11px;color:var(--gray)">0 file</span></div></div>
-</div>
-<div class="form-row cols-1"><div class="field"><label>Deskripsi Detail Defect</label><textarea>Stator coil overheating → isolasi terbakar. Motor tidak berputar. Kejadian ke-2 batch produksi yang sama (lihat PQR-2026-072). Perlu investigasi principal.</textarea></div></div>
 </div>
 
-<div class="section-title">📊 Mapping Sumber Data</div>
+<div class="section-title">🔬 MDT Check — Before Handling</div>
 <div class="form">
-<table><tr><th>Field</th><th>Sumber</th><th>Status</th></tr>
-<tr><td>No PQR</td><td>—</td><td>🆕 Auto v5</td></tr>
-<tr><td>PQR Source</td><td>—</td><td>🆕 Field Baru v5</td></tr>
-<tr><td>Track Unit</td><td>—</td><td>🆕 Auto v5</td></tr>
-<tr><td>Tipe Defect / Severity / Root Cause</td><td>—</td><td>🆕 v3</td></tr>
-<tr><td>Part Terkait / Supplier / PIC</td><td>—</td><td>🆕 v3</td></tr>
-<tr><td>Eskalasi Principal / Foto</td><td>—</td><td>🆕 v3</td></tr>
-</table>
+<div class="form-row cols-3">
+<div class="field"><label>MDT — Battery</label><select><option value="">Pilih...</option><option>Pass</option><option selected>Fail</option><option>Not Applicable</option></select></div>
+<div class="field"><label>MDT — MCU</label><select><option value="">Pilih...</option><option>Pass</option><option selected>Fail</option><option>Not Applicable</option></select></div>
+<div class="field"><label>MDT — Display</label><select><option value="">Pilih...</option><option selected>Pass</option><option>Fail</option><option>Not Applicable</option></select></div>
+</div>
+<div class="form-row cols-1">
+<div class="field"><label>Explanation of Damage <span style="font-size:10px;color:var(--gray)">(Komentar dari teknisi)</span></label><textarea placeholder="Jelaskan kerusakan...">Stator coil pada E-Motor terbakar. Terdapat bekas overheating pada winding. Tidak ditemukan kerusakan pada komponen terkait (controller, battery, wiring). Kerusakan terjadi karena kegagalan isolasi internal.</textarea></div>
+</div>
+</div>
+
+<div class="section-title">🔧 Part Problem & Claim</div>
+<div class="form">
+<div class="form-row">
+<div class="field"><label>Part Problem</label><input type="text" value="E-Motor" class="readonly" readonly></div>
+<div class="field"><label>Component Problem</label><input type="text" value="Stator Coil Assembly" class="readonly" readonly></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Part Name</label><input type="text" value="E-Motor Assembly (Complete)"></div>
+<div class="field"><label>Part Number</label><input type="text" value="EM-ASSY-001-MKA"></div>
+</div>
+<div class="form-row cols-1">
+<div class="field"><label>Requested Part for Claim</label><textarea placeholder="Parts yang diminta untuk klaim garansi...">1. E-Motor Assembly (Complete) — EM-ASSY-001-MKA — Qty: 1
+2. Thermal Sensor — TS-002-MKA — Qty: 1 (preventive)</textarea></div>
+</div>
+<div class="form-row cols-1">
+<div class="field"><label>Quick Fix Problem <span style="font-size:10px;color:var(--gray)">(Komentar teknisi — perbaikan sementara)</span></label><textarea placeholder="Quick fix yang dilakukan...">Tidak ada quick fix. Unit memerlukan penggantian E-Motor assembly secara penuh. Unit tidak dapat dioperasikan sebelum penggantian.</textarea></div>
+</div>
+</div>
+
+<div class="section-title">📸 Visual Damage & Attachment</div>
+<div class="form">
+<div class="form-row cols-1">
+<div class="field"><label>Visual Damage <span style="font-size:10px;color:var(--gray)">(Deskripsi visual kerusakan)</span></label><textarea placeholder="Deskripsikan visual kerusakan...">Terdapat bekas terbakar pada stator coil. Warna coil berubah dari tembaga menjadi kehitaman. Tidak ada kerusakan fisik eksternal pada casing motor.</textarea></div>
+</div>
+<div class="form-row cols-1">
+<div class="field"><label>Attachment File <span style="font-size:10px;color:var(--gray)">(Foto & video problem)</span></label>
+<div class="file-upload">📎 Tap to upload photos/videos<br><span style="font-size:10px">Max 10MB per file · JPG, PNG, MP4</span></div>
+</div>
+</div>
+</div>
+
+<div class="section-title">✅ Verifikasi</div>
+<div class="form">
+<div class="form-row cols-1" style="gap:12px">
+<div class="field"><label>Apakah problem ini terjadi saat konsumen melakukan Service Gratis 1?</label><select><option>No</option><option>Yes</option></select></div>
+<div class="field"><label>Apakah unit pernah atau ada modifikasi?</label><select><option>No</option><option>Yes</option></select></div>
+<div class="field"><label>Apakah unit pernah dibongkar di bengkel umum (bukan bengkel resmi)?</label><select><option>No</option><option>Yes</option></select></div>
+<div class="field"><label>Apakah unit pernah terendam air atau menerjang banjir?</label><select><option>No</option><option>Yes</option></select></div>
+</div>
 </div>
 
 <div class="actions">
-<a href="stage-3-analisa.html" style="text-decoration:none"><button class="btn btn-outline">← Stage 3: Analisa</button></a>
-<button class="btn btn-primary">Submit PQR → Stage 5: Parts</button>
+<a href="stage-3-analisa.html" class="btn btn-outline">← Stage 3</a>
+<a href="stage-5-parts.html" class="btn btn-primary">Submit PQR → Stage 5</a>
 </div>
 </div>
-<div class="nav-footer">■ Stage 4/9 &nbsp;|&nbsp; PQR Submission (Dual Entry v4) &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
-</div>
-</body></html>
+</div></body></html>
