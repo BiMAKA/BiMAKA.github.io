@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 6: Repair — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:720px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--orange);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.done{background:var(--green)}.prog-dot.active{background:var(--orange);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#FFF7ED;border-bottom:1px solid #FED7AA;padding:10px 24px;font-size:13px;color:#9A3412;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .src{color:var(--orange);font-size:10px;margin-left:4px}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,53,.1)}.field textarea{resize:vertical;min-height:70px}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--orange);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}@media(max-width:600px){.form-row{grid-template-columns:1fr}}</style></head><body>
+<div class="page">
+<div class="header"><div class="num">6</div><div><h1>Repair / Replace</h1><div class="sub">Stage 6/9 &nbsp;|&nbsp; Repair → QC → Problem Solve? → loop / Handover</div></div></div>
+<div class="progress">
+<div class="prog-dot done"></div><span class="prog-label">Receive</span>
+<div class="prog-dot done"></div><span class="prog-label">Ticket</span>
+<div class="prog-dot done"></div><span class="prog-label">Analisa</span>
+<div class="prog-dot done"></div><span class="prog-label">PQR</span>
+<div class="prog-dot done"></div><span class="prog-label">Parts</span>
+<div class="prog-dot active"></div><span class="prog-label active">Repair</span>
+<div class="prog-dot"></div><span class="prog-label">QC</span>
+<div class="prog-dot"></div><span class="prog-label">Handover</span>
+<div class="prog-dot"></div><span class="prog-label">Selesai</span>
+</div>
+<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:right"><a href="index.html" style="color:var(--blue);text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
+<div class="info-banner">🔧 Flow: <strong>Repair / Replace</strong> → QC & Testride → Problem Solve? (No → loop Repair) → Handover</div>
+
+<div class="section-title">🔧 Status Perbaikan</div>
+<div class="form">
+<div class="form-row">
+<div class="field"><label>Repair Status <span class="src">← SSOT Y</span></label><select><option>🔄 In Progress</option><option selected>⏸️ Waiting for Parts</option><option>✅ Done</option></select></div>
+<div class="field"><label>PIC Teknisi <span class="src">⚠️ Baru</span></label><select><option selected>Rico — E-Motor KC Specialist</option><option>Empud — General SC</option><option>Inta — Electrical SC</option></select></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Tgl Mulai Repair <span class="src">← SSOT Z</span></label><input type="date" placeholder="Diisi saat mulai"></div>
+<div class="field"><label>Tgl Selesai Repair <span class="src">← SSOT AA</span></label><input type="date" placeholder="Diisi saat selesai"></div>
+</div>
+<div class="form-row cols-1">
+<div class="field"><label>Catatan Pengerjaan</label><textarea>Menunggu parts E-Motor Assembly PO-2026-0521. ETA 20/05/2026. Unit disimpan di KC Pasar Rebo. Estimasi pengerjaan 1-2 hari setelah parts tiba.</textarea></div>
+</div>
+<div class="form-row cols-1">
+<div class="field"><label>Parts / Komponen Diganti</label><textarea rows="2" placeholder="List parts yang diganti...">[Akan diisi saat repair] — E-Motor Assembly (full unit)</textarea></div>
+</div>
+</div>
+<div class="actions">
+<a href="stage-5-parts.html" style="text-decoration:none"><button class="btn btn-outline">← Stage 5: Parts</button></a>
+<a href="stage-7-qc.html" style="text-decoration:none"><button class="btn btn-primary">Lanjut → Stage 7: QC</button></a>
+</div>
+</div>
+<div class="nav-footer">■ Stage 6/9 &nbsp;|&nbsp; Repair / Replace &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
+</div>
+</body></html>

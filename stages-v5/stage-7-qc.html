@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 7: QC — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:720px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--green);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.done{background:var(--green)}.prog-dot.active{background:var(--green);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#F0FDF4;border-bottom:1px solid #86EFAC;padding:10px 24px;font-size:13px;color:#166534;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .src{color:var(--orange);font-size:10px;margin-left:4px}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,.1)}.field textarea{resize:vertical;min-height:60px}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--green);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.btn-danger{background:white;color:var(--red);border:1.5px solid var(--red)}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}.loop-warning{background:#FEF2F2;border:1px solid #FECACA;padding:12px;border-radius:8px;margin:12px 0;font-size:13px}@media(max-width:600px){.form-row{grid-template-columns:1fr}}</style></head><body>
+<div class="page">
+<div class="header"><div class="num">7</div><div><h1>QC & Testride</h1><div class="sub">Stage 7/9 &nbsp;|&nbsp; QC → Testride → Problem Solve? (No → loop Repair)</div></div></div>
+<div class="progress">
+<div class="prog-dot done"></div><span class="prog-label">Receive</span>
+<div class="prog-dot done"></div><span class="prog-label">Ticket</span>
+<div class="prog-dot done"></div><span class="prog-label">Analisa</span>
+<div class="prog-dot done"></div><span class="prog-label">PQR</span>
+<div class="prog-dot done"></div><span class="prog-label">Parts</span>
+<div class="prog-dot done"></div><span class="prog-label">Repair</span>
+<div class="prog-dot active"></div><span class="prog-label active">QC</span>
+<div class="prog-dot"></div><span class="prog-label">Handover</span>
+<div class="prog-dot"></div><span class="prog-label">Selesai</span>
+</div>
+<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:right"><a href="index.html" style="color:var(--blue);text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
+<div class="info-banner">✅ Flow: Repair Selesai → <strong>QC & Testride</strong> → Problem Solve? Yes → Handover | No → <strong>↩ Loop ke Repair</strong></div>
+
+<div class="section-title">🔬 Quality Control</div>
+<div class="form">
+<div class="form-row">
+<div class="field"><label>QC Check (MDT) <span class="src">← Problem Tracker O</span></label><select><option>✅ Pass</option><option>❌ Fail</option></select></div>
+<div class="field"><label>QC Check (PSG Emot) <span class="src">← Problem Tracker P</span></label><select><option>✅ Pass</option><option>❌ Fail</option><option>N/A</option></select></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Testride Result <span class="src">⚠️ Baru</span></label><select><option>✅ Lulus — unit normal</option><option>⚠️ Minor issue</option><option>❌ Gagal — perlu perbaikan ulang</option></select></div>
+<div class="field"><label>Tgl QC / Testride</label><input type="date"></div>
+</div>
+<div class="form-row cols-1"><div class="field"><label>Catatan QC</label><textarea placeholder="Hasil QC dan testride..."></textarea></div></div>
+</div>
+
+<div class="section-title">🔁 Problem Solve Decision</div>
+<div class="form">
+<div class="form-row">
+<div class="field"><label>Problem Solved? <span class="src">⚠️ Mandatory Gate</span></label><select><option>✅ Yes — selesai</option><option>❌ No — loop back ke Repair</option></select><span class="hint">⚠️ Jika "No", unit auto kembali ke Stage 6 dengan flag QC Fail</span></div>
+<div class="field"><label>PIC QC <span class="src">⚠️ Baru</span></label><input type="text" placeholder="Nama inspector QC..."></div>
+</div>
+<div class="loop-warning"><strong>↩ Loop Logic:</strong> Problem Solve = <strong>No</strong> → auto kembali Stage 6 (QC Fail — Re-Repair) • QC attempt counter (max 3x) • Log QC tersimpan di Activity Log</div>
+</div>
+
+<div class="actions">
+<a href="stage-6-repair.html" style="text-decoration:none"><button class="btn btn-outline">← Stage 6: Repair</button></a>
+<button class="btn btn-danger">❌ Fail — Loop Repair</button>
+<button class="btn btn-primary">✅ Pass → Stage 8: Handover</button>
+</div>
+</div>
+<div class="nav-footer">■ Stage 7/9 &nbsp;|&nbsp; QC & Testride &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
+</div>
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 5: Parts — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:720px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--orange);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.done{background:var(--green)}.prog-dot.active{background:var(--orange);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#EFF6FF;border-bottom:1px solid #BFDBFE;padding:10px 24px;font-size:13px;color:#1E40AF;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .src{color:var(--orange);font-size:10px;margin-left:4px}.field input,.field select{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,53,.1)}.field input.readonly{background:#FFF8F0;border-style:dashed;color:var(--gray)}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--orange);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--light);text-align:left;padding:6px 10px}td{padding:4px 10px;border-bottom:1px solid var(--border)}@media(max-width:600px){.form-row{grid-template-columns:1fr}}</style></head><body>
+<div class="page">
+<div class="header"><div class="num">5</div><div><h1>Parts Estimation</h1><div class="sub">Stage 5/9 &nbsp;|&nbsp; Need Parts? → Parts Ready? → Order / Repair</div></div></div>
+<div class="progress">
+<div class="prog-dot done"></div><span class="prog-label">Receive</span>
+<div class="prog-dot done"></div><span class="prog-label">Ticket</span>
+<div class="prog-dot done"></div><span class="prog-label">Analisa</span>
+<div class="prog-dot done"></div><span class="prog-label">PQR</span>
+<div class="prog-dot active"></div><span class="prog-label active">Parts</span>
+<div class="prog-dot"></div><span class="prog-label">Repair</span>
+<div class="prog-dot"></div><span class="prog-label">QC</span>
+<div class="prog-dot"></div><span class="prog-label">Handover</span>
+<div class="prog-dot"></div><span class="prog-label">Selesai</span>
+</div>
+<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:right"><a href="index.html" style="color:var(--blue);text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
+<div class="info-banner">📦 Need Parts? → Parts Ready? → <strong>Parts Order</strong> / Repair. Berlaku untuk KC (EV Core) dan SC (Non EV/Accident).</div>
+
+<div class="section-title">📦 Parts (KC Path — EV Core)</div>
+<div class="form">
+<div class="form-row">
+<div class="field"><label>Need Parts?</label><select><option selected>Ya — perlu parts</option><option>Tidak — langsung repair</option></select></div>
+<div class="field"><label>Part Problem <span class="src">← Problem Tracker W</span></label><select><option selected>E-Motor Assembly</option><option>MCU Unit</option><option>Battery Pack</option><option>Controller</option><option>Throttle</option><option>Wiring Harness</option><option>Body Part</option></select></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Parts Ready? <span class="src">← SSOT V</span></label><select><option>✅ Ready Stock</option><option selected>⚠️ Need Order</option></select></div>
+<div class="field"><label>No Order Part <span class="src">← SSOT X</span></label><input type="text" value="PO-2026-0521"></div>
+</div>
+<div class="form-row">
+<div class="field"><label>ETA Parts <span class="src">⚠️ Baru</span></label><input type="date" value="2026-05-20"><span class="hint">Kritis: makin lama ETA = SLA gap makin besar</span></div>
+<div class="field"><label>Qty</label><input type="number" value="1" min="1"></div>
+</div>
+</div>
+
+<div class="section-title">💰 Estimasi Biaya</div>
+<div class="form">
+<div class="form-row">
+<div class="field"><label>Estimasi Biaya (Rp) <span class="src">← SSOT AD</span></label><input type="text" value="4.500.000"></div>
+<div class="field"><label>Approval Estimasi <span class="src">← SSOT AE</span></label><select><option selected>⏳ Menunggu</option><option>✅ Approved</option><option>❌ Ditolak</option></select></div>
+</div>
+<div class="form-row">
+<div class="field"><label>AR-AD <span class="src">← Problem Tracker U</span></label><input type="text" value="AD-RD-4521"></div>
+<div class="field"><label>PQR <span class="src">← Problem Tracker R</span></label><input type="text" value="PQR-2026-089" class="readonly" readonly></div>
+</div>
+<div class="form-row">
+<div class="field"><label>Insurance / Klaim Oona? <span class="src">← SSOT W</span></label><select><option selected>Tidak</option><option>Ya — submit klaim</option></select></div>
+<div class="field"><label>No Polis</label><input type="text" placeholder="Auto-fill dari List Asuransi" class="readonly" readonly></div>
+</div>
+</div>
+
+<div class="section-title">📊 Mapping</div>
+<div class="form">
+<table><tr><th>Field</th><th>Sheet</th><th>Kolom</th></tr>
+<tr><td>Part Problem</td><td>Problem Tracker</td><td>Col W</td></tr>
+<tr><td>Part Readiness</td><td>SSOT</td><td>Col V</td></tr>
+<tr><td>No Order Part</td><td>SSOT</td><td>Col X</td></tr>
+<tr><td>Estimasi Biaya</td><td>SSOT</td><td>Col AD</td></tr>
+<tr><td>Approval / AR-AD</td><td>SSOT / Problem Tracker</td><td>Col AE / U</td></tr>
+<tr><td>ETA Parts</td><td>—</td><td>⚠️ Baru</td></tr>
+</table>
+</div>
+
+<div class="actions">
+<a href="stage-4-pqr.html" style="text-decoration:none"><button class="btn btn-outline">← Stage 4: PQR</button></a>
+<a href="stage-6-repair.html" style="text-decoration:none"><button class="btn btn-primary">Lanjut → Stage 6: Repair</button></a>
+</div>
+</div>
+<div class="nav-footer">■ Stage 5/9 &nbsp;|&nbsp; Parts & Estimasi &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
+</div>
+</body></html>

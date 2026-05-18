@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MAKA After-Sales ERP v5 — Stage Review</title>
+<style>
+:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--border:#E5E7EB;--purple:#7C3AED;--red:#DC2626}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}
+.page{max-width:800px;width:100%}
+.hero{background:var(--dark);color:white;padding:32px;border-radius:16px;text-align:center;margin-bottom:24px}
+.hero h1{font-size:24px;margin-bottom:6px}.hero p{opacity:.7;font-size:14px}
+.hero .v5badge{display:inline-block;background:var(--red);color:white;padding:4px 12px;border-radius:20px;font-size:12px;margin-bottom:8px}
+.stage-grid{display:grid;gap:12px}
+.stage-card{background:white;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid var(--border);transition:all .2s;cursor:pointer;text-decoration:none;color:inherit}
+.stage-card:hover{border-color:var(--orange);box-shadow:0 2px 8px rgba(255,107,53,.1);transform:translateY(-1px)}
+.stage-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0;color:white}
+.s1{background:var(--orange)}.s2{background:var(--blue)}.s3{background:var(--blue)}.s4{background:var(--purple)}.s5{background:var(--orange)}.s6{background:var(--orange)}.s7{background:var(--green)}.s8{background:var(--blue)}.s9{background:var(--green)}
+.stage-info{flex:1}.stage-info h3{font-size:15px;margin-bottom:2px}.stage-info .desc{font-size:12px;color:var(--gray)}
+.stage-badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;display:inline-flex;align-items:center;gap:3px;margin-top:4px}.badge-sheet{background:#FFF8F0;color:var(--orange)}.badge-new{background:#FEF2F2;color:#DC2626}.badge-auto{background:#F0FDF4;color:#059669}.badge-v5{background:#FEF2F2;color:#DC2626}.badge-mandatory{background:#F5F3FF;color:#6D28D9}
+.flow-hint{font-size:10px;color:var(--gray);margin-left:auto;text-align:right;min-width:80px}
+.footer{text-align:center;margin-top:24px;font-size:11px;color:var(--gray)}
+@media(max-width:600px){.stage-card{flex-direction:column;text-align:center}.flow-hint{text-align:center;margin:4px 0 0}}
+</style></head><body>
+<div class="page">
+<div class="hero">
+<div class="v5badge">🔄 Updated v5</div>
+<h1>🔧 MAKA After-Sales ERP</h1>
+<p>Mockup Form — 9 Stages &nbsp;|&nbsp; Flow v5 &nbsp;|&nbsp; 13 Mei 2026</p>
+</div>
+<div class="stage-grid">
+<a href="stage-1-receive.html" class="stage-card">
+<div class="stage-num s1">1</div>
+<div class="stage-info"><h3>Receive at WM & Create Ticket</h3><div class="desc">CC / OPS input ERP: VIN, User name, phone, address &amp; problem</div><span class="stage-badge badge-v5">📊 CC / OPS Input</span></div>
+<div class="flow-hint">Customer<br>→ Receive</div></a>
+<a href="stage-2-ticket.html" class="stage-card">
+<div class="stage-num s2">2</div>
+<div class="stage-info"><h3>Data Pool 🆕</h3><div class="desc">List semua TRB dari Stage 1 — pilih mana yang dikerjakan</div><span class="stage-badge badge-v5">🆕 v5: Create Ticket</span></div>
+<div class="flow-hint">Receive<br>→ Pool</div></a>
+<a href="stage-3-analisa.html" class="stage-card">
+<div class="stage-num s3">3</div>
+<div class="stage-info"><h3>Problem Analysis &amp; Routing</h3><div class="desc">Routing unit problem, accident, TO dan unit pengganti</div><span class="stage-badge badge-sheet">📊 Problem Tracker</span></div>
+<div class="flow-hint">Pool<br>→ Analisa</div></a>
+<a href="stage-4-pqr.html" class="stage-card">
+<div class="stage-num s4">4</div>
+<div class="stage-info"><h3>PQR Submission</h3><div class="desc">PQR for warranty claim</div><span class="stage-badge badge-v5">🆕 v5: Dual PQR</span><span class="stage-badge badge-mandatory">🔒 Mandatory</span></div>
+<div class="flow-hint">Analisa<br>→ PQR</div></a>
+<a href="stage-5-parts.html" class="stage-card">
+<div class="stage-num s5">5</div>
+<div class="stage-info"><h3>Parts Estimation</h3><div class="desc">Parts readiness, order, ETA, Insurance process</div><span class="stage-badge badge-sheet">📊 SSOT</span></div>
+<div class="flow-hint">PQR<br>→ Parts</div></a>
+<a href="stage-6-repair.html" class="stage-card">
+<div class="stage-num s6">6</div>
+<div class="stage-info"><h3>Repair / Replace</h3><div class="desc">Status, technician, parts list, notes</div><span class="stage-badge badge-new">🆕 PIC Teknisi</span></div>
+<div class="flow-hint">Parts<br>→ Repair</div></a>
+<a href="stage-7-qc.html" class="stage-card">
+<div class="stage-num s7">7</div>
+<div class="stage-info"><h3>QC & Testride</h3><div class="desc">Problem solved? No → back to repair.</div><span class="stage-badge badge-new">🆕 Loop counter</span></div>
+<div class="flow-hint">Repair<br>→ QC</div></a>
+<a href="stage-8-handover.html" class="stage-card">
+<div class="stage-num s8">8</div>
+<div class="stage-info"><h3>Handover to Customer</h3><div class="desc">Handover to customer, change status to TO → input update to data pool</div><span class="stage-badge badge-sheet">📊 Log Unit Trouble</span></div>
+<div class="flow-hint">QC<br>→ Handover</div></a>
+<a href="stage-9-done.html" class="stage-card">
+<div class="stage-num s9">9</div>
+<div class="stage-info"><h3>✅ DONE</h3><div class="desc">Job card closed. Final summary.</div><span class="stage-badge badge-auto">🤖 Auto-update</span></div>
+<div class="flow-hint">Handover<br>→ DONE</div></a>
+</div>
+<div class="footer">MAKA After-Sales ERP Mockup v5 — Afsel & Bima — 13 Mei 2026<br>🆕 v5 = Field baru di versi ini &nbsp;|&nbsp; 📊 = Dari Google Sheets &nbsp;|&nbsp; 🤖 = Auto-generate</div>
+</div></body></html>

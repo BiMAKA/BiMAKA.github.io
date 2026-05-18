@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 1: Receive & Create Ticket — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:760px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--orange);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.active{background:var(--orange);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#EFF6FF;border-bottom:1px solid #BFDBFE;padding:10px 24px;font-size:13px;color:#1E40AF;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .src{color:var(--orange);font-size:10px;margin-left:4px}.field label .auto{color:#059669;font-size:10px;margin-left:4px}.field label .manual{color:#DC2626;font-size:10px;margin-left:4px}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,53,.1)}.field textarea{resize:vertical;min-height:70px}.field input.auto-fill{background:#F0FDF4;border:1.5px solid #86EFAC;color:var(--dark);font-weight:500}.field input.manual-input{background:#FFF8F0;border:1.5px dashed var(--orange)}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.btn{display:inline-block;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .2s}.btn-create{background:var(--orange);color:white;padding:14px 32px;font-size:16px;width:100%}.btn-create:hover{background:#E55A2B}.btn-primary{background:var(--orange);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}.ticket-created{background:#F0FDF4;border:2px solid #86EFAC;border-radius:10px;padding:16px;text-align:center;margin:12px 0;display:none}.ticket-created h3{color:#166534;font-size:16px;margin-bottom:4px}.ticket-created .trb{font-size:24px;font-weight:800;color:var(--green);font-family:monospace}.ticket-created .timestamp{font-size:12px;color:var(--gray);margin-top:4px}.step-indicator{display:flex;align-items:center;gap:8px;padding:12px 0;font-size:13px;color:var(--gray)}.step-indicator .si-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;background:var(--light);color:var(--gray);flex-shrink:0}.step-indicator .si-num.active{background:var(--orange);color:white}.step-indicator .si-line{width:20px;height:2px;background:var(--border)}.section-auto{background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;margin:8px 0}.section-manual{background:#FFF8F0;border:1px dashed var(--orange);border-radius:8px;margin:8px 0}.section-header-sm{padding:8px 14px;font-weight:700;font-size:12px;display:flex;align-items:center;gap:6px}.section-body{padding:8px 14px 14px}table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--light);text-align:left;padding:6px 10px}td{padding:4px 10px;border-bottom:1px solid var(--border)}@media(max-width:600px){.form-row,.form-row.cols-3{grid-template-columns:1fr}}</style></head><body>
+<div class="page">
+<div class="header"><div class="num">1</div><div><h1>Receive at WM &amp; Create Ticket</h1><div class="sub">Stage 1/9 &nbsp;|&nbsp; Flow: Customer Inbound → Call CC → Receive at WM & Create Ticket → Create Ticket</div></div></div>
+<div class="progress">
+<div class="prog-dot active"></div><span class="prog-label active">Receive</span>
+<div class="prog-dot"></div><span class="prog-label">Data Pool</span>
+<div class="prog-dot"></div><span class="prog-label">Analisa</span>
+<div class="prog-dot"></div><span class="prog-label">PQR</span>
+<div class="prog-dot"></div><span class="prog-label">Parts</span>
+<div class="prog-dot"></div><span class="prog-label">Repair</span>
+<div class="prog-dot"></div><span class="prog-label">QC</span>
+<div class="prog-dot"></div><span class="prog-label">Handover</span>
+<div class="prog-dot"></div><span class="prog-label">Selesai</span>
+</div>
+<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:right"><a href="index.html" style="color:var(--blue);text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
+<div class="info-banner">ℹ️ Customer Inbound → Call CC → Receive at WM & Create Ticket → <strong>Create Ticket</strong> (TRB) — Nomor tiket unik digunakan sampai proses selesai.</div>
+
+<!-- STEP 1: VIN & Cara Masuk -->
+<div class="section-title">Step 1 — Input VIN & Cara Unit Masuk</div>
+<div class="form">
+<div class="step-indicator">
+<div class="si-num active">1</div><span>Input VIN</span>
+<div class="si-line"></div>
+<div class="si-num">2</div><span style="color:var(--gray)">Create Ticket</span>
+<div class="si-line"></div>
+<div class="si-num">3</div><span style="color:var(--gray)">Auto-fill + Free Text</span>
+</div>
+<div class="form-row">
+<div class="field"><label>VIN — 4 Digit Terakhir <span class="manual">Input Manual</span></label><input type="text" class="manual-input" value="MKMAAB2C0SJ000525" placeholder="Input 4 digit terakhir VIN..." maxlength="4" style="font-size:18px;font-weight:700;letter-spacing:2px"><span class="hint">🔍 Cukup input <strong>4 digit terakhir</strong>. Contoh: 0525 → auto-fill ke <strong>MKMAAB2C0SJ000525</strong>. Prefix auto-generated.</span></div>
+<div class="field"><label>Tipe Unit <span class="manual">CC / OPS Input</span></label><select><option>Pilih tipe unit...</option><option selected>Unit Problem</option><option>Unit Accident</option><option>Unit TO</option><option>Unit Pengganti</option></select><span class="hint">Menentukan alur proses selanjutnya (routing, PQR, administrasi, PDI)</span></div><div class="field"><label>PIC Input <span class="manual">CC / OPS</span></label><select><option value="">Pilih PIC...</option><optgroup label="Team CC"><option>Arfie</option><option>Yulia</option><option>CC Agents</option></optgroup><optgroup label="Team OPS"><option>Marthin</option><option>Akbar</option><option>Fenda</option><option>Eko</option></optgroup></select><span class="hint">Siapa yang input data di stage ini</span></div><div class="field"><label>Jalur Masuk</label><select><option selected>Towing ke WM</option><option>Walk in ke WM</option><option>Towing ke Showroom</option><option>Walk in ke Showroom</option></select></div>
+</div>
+<div class="form-row cols-1"><div class="field"><label>Lokasi Unit Diterima</label><select><option selected>WM - Pasar Rebo</option><option>RDL - Radio Dalam</option><option>KGD - Kelapa Gading</option><option>DPK - Depok</option><option>GSP - Gading Serpong</option><option>BKS - Bekasi</option></select></div>
+</div>
+</div>
+
+<!-- CREATE TICKET BUTTON -->
+<div class="form" style="text-align:center">
+<button class="btn btn-create" onclick="document.getElementById('ticketBox').style.display='block';document.getElementById('autofillSection').style.display='block';document.getElementById('manualSection').style.display='block';this.style.display='none';document.getElementById('step2').classList.add('active');document.getElementById('step3').classList.add('active');">🎫 Create Ticket — Generate Nomor TRB</button>
+<p style="font-size:11px;color:var(--gray);margin-top:6px">Klik untuk generate nomor tiket unik & auto-fill data kendaraan + customer</p>
+<div class="ticket-created" id="ticketBox">
+<h3>✅ Ticket Created</h3>
+<div style="font-size:12px;color:var(--gray);margin-bottom:4px">Visit ID: <strong>VIS-2026-0514</strong></div>
+<div style="margin-top:8px;text-align:left">
+<div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:white;border:2px solid #86EFAC;border-radius:8px;margin-bottom:6px">
+<span style="font-family:monospace;font-weight:700;font-size:15px;color:var(--green)">TRB-128</span>
+<span style="font-size:12px;color:var(--gray);flex:1">Problem: Motor mati (total power off)</span>
+<span style="font-size:10px;background:#D1FAE5;color:#059669;padding:3px 8px;border-radius:8px">Active</span>
+</div>
+<div id="trbList"></div>
+</div>
+<button class="btn" style="margin-top:10px;background:white;color:var(--orange);border:2px dashed var(--orange);width:100%;padding:10px;font-size:13px;cursor:pointer" onclick="addProblem()">+ Add Problem</button>
+<p style="font-size:10px;color:var(--gray);margin-top:4px">Setiap problem punya TRB sendiri. SLA, Parts, PQR, QC terpisah.</p>
+<div class="timestamp">Dibuat: 13/05/2026 09:15:22 WIB &nbsp;|&nbsp; Pool ID: DP-2026-05389</div>
+</div>
+</div>
+
+<!-- STEP 2: AUTO-FILL (muncul setelah create ticket) -->
+<div id="autofillSection" style="display:none">
+<div class="section-title">
+<span>📊</span> Step 2 — Data Auto-Fill dari VIN
+<span style="margin-left:auto;font-size:10px;color:#059669;">🤖 Auto-generated — tidak bisa diedit</span>
+</div>
+<div class="form">
+
+<div class="section-auto">
+<div class="section-header-sm" style="color:#166534">🚗 Vehicle Information — Auto-fill</div>
+<div class="section-body">
+<div class="form-row cols-3">
+<div class="field"><label>Category <span class="manual">Pilih</span></label><select style="background:#F0FDF4;border:1.5px solid #86EFAC;font-weight:500"><option selected>RTO MAKA JKT</option><option>RTO MAKA SMG</option><option>RTO MAKA BALI</option><option>RTO TransGo</option><option>RTO Dash</option><option>RTO Broom</option><option>Retail</option><option>Asset</option></select></div>
+<div class="field"><label>Color <span class="auto">Auto</span></label><input type="text" value="MAKA - BLACK" class="auto-fill" readonly></div>
+<div class="field"><label>Nopol <span class="auto">Auto</span></label><input type="text" value="B 4334 SWC" class="auto-fill" readonly></div>
+</div>
+<div class="form-row cols-3">
+<div class="field"><label>Model Name <span class="auto">Auto</span></label><input type="text" value="MAKA Cavalry" class="auto-fill" readonly></div>
+<div class="field"><label>E-Mot S/N <span class="auto">Auto</span></label><input type="text" value="YN72V4000W45H250120770" class="auto-fill" readonly></div>
+<div class="field"><label>IMEI MT <span class="auto">Auto</span></label><input type="text" value="353691845070928" class="auto-fill" readonly></div>
+</div>
+<div class="form-row"><div class="field"><label>STU Date <span class="auto">Auto</span></label><input type="date" value="2025-08-06" class="auto-fill" readonly></div>
+<div class="field"><label>ODO (Km) <span class="manual">Freetext</span></label><input type="text" value="12.450" placeholder="Input ODO (Km)..." style="background:#FFF8F0;border:1.5px dashed var(--orange)"></div></div>
+</div>
+</div>
+
+<div class="section-auto">
+<div class="section-header-sm" style="color:#166534">👤 Customer Information — Auto-fill</div>
+<div class="section-body">
+<div class="form-row"><div class="field"><label>Name <span class="auto">Auto</span></label><input type="text" value="PT. TRANSGO" class="auto-fill" readonly></div>
+<div class="field"><label>Phone Number <span class="auto">Auto</span></label><input type="text" value="081234567890" class="auto-fill" readonly></div></div>
+<div class="form-row cols-1"><div class="field"><label>Address <span class="auto">Auto</span></label><input type="text" value="Jl. Raya Pasar Rebo No. 88, Jakarta Timur" class="auto-fill" readonly></div></div>
+</div>
+</div>
+</div></div>
+
+<!-- STEP 3: FREE TEXT (muncul setelah create ticket) -->
+<div id="manualSection" style="display:none">
+<div class="section-title">
+<span>✏️</span> Step 3 — Data Free Text
+<span style="margin-left:auto;font-size:10px;color:#DC2626;">Diisi manual oleh team CC & Marthin</span>
+</div>
+<div class="form">
+
+<div class="section-manual">
+<div class="section-header-sm" style="color:#9A3412">📋 Request USER Information — Free Text</div>
+<div class="section-body">
+<div class="form-row"><div class="field"><label>User Name </label><input type="text" class="manual-input" value="Ery Hartanto (Driver)" placeholder="Diisi oleh CC..."></div>
+<div class="field"><label>User Phone No </label><input type="text" class="manual-input" value="085180898952" placeholder="Diisi oleh CC..."></div></div>
+<div class="form-row cols-1"><div class="field"><label>User Address <span class="manual">CC/Marthin Input</span></label><input type="text" class="manual-input" value="Bekasi, Jawa Barat" placeholder="Diisi oleh CC/Marthin..."></div></div>
+</div>
+</div>
+
+<div class="section-manual">
+<div class="section-header-sm" style="color:#9A3412">🛑 Problem — Free Text</div>
+<div class="section-body">
+<div class="form-row cols-1"><div class="field"><label>Problem / Keluhan </label><textarea class="manual-input" placeholder="Deskripsi masalah dari driver/customer...">Motor mati total saat di jalan, tidak bisa dinyalakan kembali. Muncul error di display. Motor sebelumnya terasa panas sebelum mati.</textarea></select></div></div>
+<div class="form-row"><div class="field"><label>Tgl Masuk </label><input type="date" value="2026-05-13" class="manual-input"></div>
+<div class="field"><label>Jam Masuk </label><input type="time" value="09:15" class="manual-input"></div></div>
+</div>
+</div>
+</div></div>
+
+<!-- MAPPING -->
+<div class="section-title">📊 Siapa Isi Apa</div>
+<div class="form">
+<table>
+<tr style="background:var(--light)"><th>Step</th><th>Field</th><th>Diisi Oleh</th><th>Sumber</th></tr>
+<tr><td>1</td><td>VIN</td><td>CC / OPS</td><td>Manual input</td></tr>
+<tr><td>1</td><td>Jalur Masuk, Lokasi WM</td><td>CC</td><td>Dropdown</td></tr>
+<tr style="background:#F0FDF4"><td>2</td><td>Vehicle Info (8 field)</td><td>🤖 Auto-fill</td><td>VIN lookup → MASTER_UNIT</td></tr>
+<tr style="background:#F0FDF4"><td>2</td><td>Customer Info (3 field)</td><td>🤖 Auto-fill</td><td>VIN lookup → SSOT</td></tr>
+<tr style="background:#FFF8F0"><td>3</td><td>User Name, Phone, Address</td><td>CC</td><td>Manual free text</td></tr>
+<tr style="background:#FFF8F0"><td>3</td><td>Problem / Keluhan</td><td>CC</td><td>Manual free text</td></tr>
+<tr style="background:#FFF8F0"><td>3</td><td>Tgl/Jam Masuk</td><td>Marthin</td><td>Manual input</td></tr>
+</table>
+<div style="margin-top:10px;padding:10px;background:#F0F9FF;border-radius:8px;font-size:11px">
+<strong>💡 Perubahan v5:</strong> Create Ticket (TRB) sekarang jadi bagian Stage 1. VIN → klik Create Ticket → auto-fill Vehicle & Customer Info → CC/Marthin isi data free text. Nomor TRB unik berlaku sampai proses selesai.
+</div>
+</div>
+
+<div class="actions">
+<button class="btn btn-outline" onclick="alert('Draft tersimpan')">💾 Simpan Draft</button>
+<a href="stage-2-ticket.html" style="text-decoration:none"><button class="btn btn-primary">💾 Simpan → Lanjut Stage 2: Data Pool</button></a>
+</div>
+</div>
+<div class="nav-footer">■ Stage 1/9 &nbsp;|&nbsp; Receive at WM Receive at WM & Create Ticket — Create Ticketamp; Create Ticket &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
+</div>
+<script>
+var trbCount = 1;
+function addProblem() {
+  trbCount++;
+  var num = 128 + trbCount - 1;
+  var list = document.getElementById('trbList');
+  var div = document.createElement('div');
+  div.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 14px;background:white;border:2px solid #86EFAC;border-radius:8px;margin-bottom:6px';
+  div.innerHTML = '<span style="font-family:monospace;font-weight:700;font-size:15px;color:var(--green)">TRB-'+num+'</span><select style="flex:1;padding:8px;border:1.5px dashed var(--orange);border-radius:6px;font-size:13px"><option value="">Pilih problem...</option>'+getProblemOptions()+'</select><span style="font-size:10px;background:#D1FAE5;color:#059669;padding:3px 8px;border-radius:8px">Active</span><button onclick="this.parentElement.remove()" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:16px">✕</button>';
+  list.appendChild(div);
+}
+function getProblemOptions() {
+  return '<option>Ban belakang bergelombang</option><option>Ban belakang habis / tipis</option><option>Ban belakang oblak</option><option>Ban depan bergelombang</option><option>Ban kurang angin / bocor</option><option>Battery boros</option><option>Baut / clip kendor / hilang</option><option>Baut Flasher berkarat</option><option>Baut MCU berkarat</option><option>Baut as roda belakang kendor</option><option>Bearing roda depan rusak</option><option>Body panel gap, tidak presisi</option><option>Body retak</option><option>Bracket front cover patah</option><option>Brakepad belakang tipis sebelah</option><option>Brakepad depan tipis sebelah</option><option>Caliper rem miring</option><option>Cat handlebar terkelupas</option><option>Center stand bengkok / patah</option><option>Center stand miring / tidak simetris</option><option>Charger error</option><option>Charger storage sulit dibuka / ditutup</option><option>Charger storage tidak dapat dibuka</option><option>Charging indicator tidak balance</option><option>Charging port basah</option><option>Charging port tidak tertutup</option><option>Cover / body panel retak</option><option>Cover / body panel sulit dibuka</option><option>DCDC converter error</option><option>Disc brake bergelombang</option><option>Display baret</option><option>Display error</option><option>E-motor tidak stabil</option><option>Footstep goyang</option><option>Fork penyok / berlubang</option><option>Frame berkarat</option><option>Frame miring / tidak simetris</option><option>Frame patah</option><option>Frame retak</option><option>Front suspension lemah / terlalu empuk</option><option>Gesekan / getaran pada bagian roda</option><option>Glove box tidak dapat mengunci</option><option>Ground clearance terlalu rendah</option><option>Handgrip terbalik</option><option>Handle rem kendor</option><option>Handlebar berat / gerakan tidak lancar</option><option>Handlebar miring</option><option>Handlebar tidak stabil</option><option>Hazzard error</option><option>Headlamp error</option><option>Horn error</option><option>Jok dalam basah / rembes</option><option>Jok dapat bergeser kanan kiri dan sulit ditutup</option><option>Jok sobek</option><option>Jok terlalu keras</option><option>Keyset error</option><option>Kotoran masuk kedalam U-Box</option><option>Kotoran masuk kedalam cover MCU</option><option>MCU ON</option><option>Main stand miring</option><option>Main stand patah</option><option>Master rem belakang macet / tidak kembali ke posisi semula</option><option>Master rem bocor</option><option>Motor mati (total power off)</option><option>PDU error</option><option>Park indicator error</option><option>Parking indicator error</option><option>Passenger foot step bengkok / patah</option><option>Passenger foot step macet</option><option>Pentil bocor</option><option>Permukaan cat mengelupas</option><option>Posisi main stand on sulit dilakukan</option><option>Power loss</option><option>Rear center light mati (keseluruhan)</option><option>Rear center light mati (sebagian)</option><option>Rear grab miring</option><option>Rem tidak pakem</option><option>Roda depan berdecit</option><option>Roda depan tidak center</option><option>Seat hinge kurang presisi, terlalu tinggi</option><option>Seatlock rusak</option><option>Selang rem belakang sobek / terkelupas</option><option>Selang rem bocor</option><option>Selang rem depan sobek / terkelupas</option><option>Shock belakang baret</option><option>Side stand bengkok</option><option>Side stand error</option><option>Side stand goyang</option><option>Side stand patah</option><option>Spion kendor</option><option>Stang bergetar saat kecepatan tertentu</option><option>Steering angle kurang maksimal</option><option>Steering rusak</option><option>Suara asing (dag / dug) pada e-motor saat akselerasi / deselerasi</option><option>Suara asing (gesekan) pada bearing roda belakang</option><option>Suara asing (gesekan) pada suspensi belakang</option><option>Suara asing (mentok) pada fork</option><option>Suara asing / benturan saat center stand posisi off</option><option>Suara asing / benturan saat side stand posisi off</option><option>Suara asing / bising di area rem belakang</option><option>Suara asing pada steering / handlebar</option><option>Suspensi belakang bocor / rembes</option><option>Suspensi belakang terlalu keras</option><option>Suspensi depan bocor / rembes</option><option>Suspensi depan terlalu keras</option><option>Swing arm bengkok</option><option>Swing arm miring / tidak simetris</option><option>Swing arm retak</option><option>Swingarm berkarat</option><option>Swingarm terkelupas</option><option>Throttle berat</option><option>Throttle error</option><option>Turn signal error</option><option>USB port error</option><option>Ujung rear grab tajam</option><option>Velg belakang bergetar / tidak balance</option><option>Velg belakang penyok</option><option>Velg depan penyok</option><option>Warna permukaan cat pudar</option><option>Warning indicator menyala</option><option>Windshield baret</option><option>Wiring Harness</option><option>Others (freetext)</option>';
+}
+</script></body></html>

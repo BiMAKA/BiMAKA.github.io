@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 3: Analisa — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB;--purple:#7C3AED}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:720px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--blue);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.done{background:var(--green)}.prog-dot.active{background:var(--blue);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#F0F9FF;border-bottom:1px solid #BAE6FD;padding:10px 24px;font-size:13px;color:#0369A1;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .src{color:var(--orange);font-size:10px;margin-left:4px}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,53,.1)}.field textarea{resize:vertical;min-height:70px}.field input.readonly{background:#FFF8F0;border-style:dashed;color:var(--gray)}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.tag{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600}.tag-kc{background:#FEE2E2;color:#DC2626}.tag-sc{background:#DBEAFE;color:#1D4ED8}.routing-box{padding:12px;border-radius:8px;margin:8px 0;font-size:13px}.routing-kc{background:#FEF2F2;border:1px solid #FECACA}.routing-sc{background:#EFF6FF;border:1px solid #BFDBFE}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--blue);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}.delta-box{background:#FEF2F2;border:1px solid #FECACA;padding:10px 14px;border-radius:8px;font-size:11px;margin:0 24px 16px}table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--light);text-align:left;padding:6px 10px}td{padding:4px 10px;border-bottom:1px solid var(--border)}@media(max-width:600px){.form-row,.form-row.cols-3{grid-template-columns:1fr}}</style></head><body>
+<div class="page">
+<div class="header"><div class="num">3</div><div><h1>Problem Analysis &amp; Routing</h1><div class="sub">Stage 3/9 &nbsp;|&nbsp; Flow: Analisa → EV Core? → KC / SC</div></div></div>
+<div class="progress">
+<div class="prog-dot done"></div><span class="prog-label">Receive</span>
+<div class="prog-dot done"></div><span class="prog-label">Ticket</span>
+<div class="prog-dot active"></div><span class="prog-label active">Analisa</span>
+<div class="prog-dot"></div><span class="prog-label">PQR</span>
+<div class="prog-dot"></div><span class="prog-label">Parts</span>
+<div class="prog-dot"></div><span class="prog-label">Repair</span>
+<div class="prog-dot"></div><span class="prog-label">QC</span>
+<div class="prog-dot"></div><span class="prog-label">Handover</span>
+<div class="prog-dot"></div><span class="prog-label">Selesai</span>
+</div>
+<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:right"><a href="index.html" style="color:var(--blue);text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
+<div class="info-banner">🔍 Flow v5: <strong>Analisa Unit Problem</strong> → PQR Submission → EV Core? → KC / SC + Waiting List</div>
+
+<div class="delta-box"><strong>🔄 v4 Update:</strong> Accident track sekarang punya Analisa sendiri: <strong>Analisa Unit Accident → Parts Estimation DINA → Aftersales Process → PQR Submission</strong>. Routing: EV Core→KC (bypass Waiting List), Non EV/Accident→SC+Waiting List.</div>
+
+<div class="section-title">🏷️ Kategori & Diagnosa</div>
+<div class="form">
+<div class="form-row cols-3">
+<div class="field"><label>Issue Category <span class="src">← Problem Tracker L</span></label><select><option selected>EV Core — E-Motor</option><option>EV Core — MCU</option><option>EV Core — Battery</option><option>Non EV Core — Electrical</option><option>Non EV Core — Mechanical</option><option>Non EV Core — Body/Frame</option><option>Accident</option></select></div>
+<div class="field"><label>Detail Issue <span class="src">← Problem Tracker M</span></label><select><option>Mati total</option><option selected>Motor tidak berputar</option><option>Suara tidak normal</option><option>Getaran berlebih</option><option>Panas berlebih</option></select></div>
+<div class="field"><label>Sub-Komponen</label><input type="text" value="Stator coil"></div>
+</div>
+
+<div class="routing-box routing-kc"><strong>🔴 Auto-Routing: EV Core → KC (Knowledge Center)</strong><br><span style="font-size:11px;color:var(--gray)">EV Core langsung ke KC — <strong>bypass Waiting List</strong>. Non EV Core & Accident → SC + masuk Waiting List (Non EV, Accident, Unit TO/Pengganti).</span></div>
+
+<div class="form-row">
+<div class="field"><label>PIC Inspeksi <span class="src">← SSOT M</span></label><input type="text" value="Akbar AJG"></div>
+<div class="field"><label>Tgl Inspeksi</label><input type="date" value="2026-05-13"></div>
+</div>
+
+<div class="form-row">
+<div class="field"><label>MDT Check <span class="src">← Problem Tracker O</span></label><select><option selected>✅ Pass</option><option>❌ Fail</option></select></div>
+<div class="field"><label>PSG Emot Check <span class="src">← Problem Tracker P</span></label><select><option selected>✅ Pass</option><option>❌ Fail</option><option>N/A</option></select></div>
+</div>
+<div class="form-row cols-1"><div class="field"><label>Hasil Analisa Teknis</label><textarea>Stator coil terbakar — ganti e-motor assembly. Controller/MCU normal. Root cause: overheating beban berlebih.</textarea></div></div>
+</div>
+
+<div class="section-title">📊 Mapping Sumber Data</div>
+<div class="form">
+<table><tr><th>Field</th><th>Sheet</th><th>Kolom</th></tr>
+<tr><td>Issue Category</td><td>Problem Tracker</td><td>Col L</td></tr>
+<tr><td>Detail Issue</td><td>Problem Tracker</td><td>Col M</td></tr>
+<tr><td>MDT Check</td><td>Problem Tracker</td><td>Col O</td></tr>
+<tr><td>PSG Emot</td><td>Problem Tracker</td><td>Col P</td></tr>
+<tr><td>PIC Inspeksi</td><td>SSOT</td><td>Col M</td></tr>
+<tr><td>Routing KC/SC</td><td>—</td><td>⚠️ Auto v5</td></tr>
+</table>
+</div>
+
+<div class="actions">
+<button class="btn btn-outline">← Stage 2: Ticket</button>
+<a href="stage-4-pqr.html" style="text-decoration:none"><button class="btn btn-primary">Lanjut → Stage 4: PQR</button></a>
+</div>
+</div>
+<div class="nav-footer">■ Stage 3/9 &nbsp;|&nbsp; Analisa & Routing &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
+</div>
+</body></html>
