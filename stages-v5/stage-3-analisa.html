@@ -21,7 +21,7 @@
 <div class="section-title">🏷️ Kategori & Diagnosa</div>
 <div class="form">
 <div class="form-row cols-3">
-<div class="field"><label>Issue Category</label><select id="issueCategory"><option value="Accident - Accident">Accident - Accident</option>
+<div class="field"><label>Issue Category</label><select id="issueCategory"><option value="Accident - Accident">Accident</option>
 <option value="EV Core - Battery">EV Core - Battery</option>
 <option value="EV Core - MCU">EV Core - MCU</option>
 <option value="Non EV Core - Body / Frame">Non EV Core - Body / Frame</option>
@@ -29,15 +29,15 @@
 <option value="Non EV Core - Mechanical">Non EV Core - Mechanical</option></select></div>
 <div class="field"><label>Detail Issue </label><input type="text" id="detailSearch" placeholder="Cari detail issue..." onkeyup="filterDetailDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:14px">
 <input type="text" id="detailSearch" placeholder="Cari detail issue..." onkeyup="filterDetailDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:14px">
-<div id="detailContainer"><select id="detail_49749" class="detail-select" data-category="Accident - Accident" style="display:none"><option value="">Pilih detail issue...</option><option>Accident</option></select>
-<select id="detail_41359" class="detail-select" data-category="EV Core - Battery" style="display:none"><option value="">Pilih detail issue...</option><option>Battery boros</option>
+<div id="detailContainer"><select id="detail_49749" class="detail-select" data-category="Accident - Accident" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Accident</option></select>
+<select id="detail_41359" class="detail-select" data-category="EV Core - Battery" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Battery boros</option>
 <option>Battery error</option>
 <option>Battery mati total</option>
 <option>Battery over voltage</option></select>
-<select id="detail_33158" class="detail-select" data-category="EV Core - MCU" style="display:none"><option value="">Pilih detail issue...</option><option>Baut MCU berkarat</option>
+<select id="detail_33158" class="detail-select" data-category="EV Core - MCU" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Baut MCU berkarat</option>
 <option>MCU error</option>
 <option>MCU indicator ON</option></select>
-<select id="detail_58184" class="detail-select" data-category="Non EV Core - Body / Frame" style="display:none"><option value="">Pilih detail issue...</option><option>Body panel gap, tidak presisi</option>
+<select id="detail_58184" class="detail-select" data-category="Non EV Core - Body / Frame" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Body panel gap, tidak presisi</option>
 <option>Body retak</option>
 <option>Bracket front cover patah</option>
 <option>Frame berkarat</option>
@@ -45,7 +45,7 @@
 <option>Frame patah</option>
 <option>Frame retak / patah</option>
 <option>Permukaan cat mengelupas</option></select>
-<select id="detail_26232" class="detail-select" data-category="Non EV Core - Electrical" style="display:none"><option value="">Pilih detail issue...</option><option>Charger error</option>
+<select id="detail_26232" class="detail-select" data-category="Non EV Core - Electrical" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Charger error</option>
 <option>Charging indicator error / mati</option>
 <option>Charging indicator tidak balance</option>
 <option>Charging port basah</option>
@@ -74,7 +74,7 @@
 <option>Turn signal error</option>
 <option>USB port error</option>
 <option>Warning indicator menyala</option></select>
-<select id="detail_47341" class="detail-select" data-category="Non EV Core - Mechanical" style="display:none"><option value="">Pilih detail issue...</option><option>Ban belakang habis / tipis</option>
+<select id="detail_47341" class="detail-select" data-category="Non EV Core - Mechanical" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Ban belakang habis / tipis</option>
 <option>Ban belakang kurang angin / bocor</option>
 <option>Ban belakang sobek</option>
 <option>Ban depan habis / tipis</option>
@@ -260,6 +260,16 @@ function filterDetailDropdown(input) {
     }
   });
 }
+document.querySelectorAll('#detailContainer select').forEach(function(s) {
+  s.addEventListener('change', function() {
+    var otherBox = document.getElementById('detailOther');
+    if (this.value === '— Others —') {
+      otherBox.style.display = 'block';
+    } else {
+      otherBox.style.display = 'none';
+    }
+  });
+});
 </script>
 function filterDetailDropdown(input) {
   var filter = input.value.toLowerCase();
