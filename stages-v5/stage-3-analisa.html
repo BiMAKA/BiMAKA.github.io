@@ -12,6 +12,7 @@
 <label>Issue Category</label>
 <select id="issueCategory" onchange="switchDetail(this.value)"><option value="Accident">Accident</option>
 <option value="EV Core - Battery">EV Core - Battery</option>
+<option value="EV Core - E-motor">EV Core - E-motor</option>
 <option value="EV Core - MCU">EV Core - MCU</option>
 <option value="Non EV Core - Body / Frame">Non EV Core - Body / Frame</option>
 <option value="Non EV Core - Electrical">Non EV Core - Electrical</option>
@@ -28,6 +29,11 @@
 <option>Battery error</option>
 <option>Battery mati total</option>
 <option>Battery over voltage</option>
+<option>— Others —</option></select>
+<select class="detail-select" data-cat="EV Core - E-motor" style="display:none"><option value="">Pilih detail issue...</option><option>E-motor bunyi kasar / dengung</option>
+<option>E-motor mati</option>
+<option>E-motor pecah / retak</option>
+<option>E-motor seret / macet</option>
 <option>— Others —</option></select>
 <select class="detail-select" data-cat="EV Core - MCU" style="display:none"><option value="">Pilih detail issue...</option><option>Baut MCU berkarat</option>
 <option>MCU error</option>
@@ -51,10 +57,6 @@
 <option>Display berembun</option>
 <option>Display error / mati</option>
 <option>Display redup sebagian</option>
-<option>E-motor bunyi kasar / dengung</option>
-<option>E-motor mati</option>
-<option>E-motor pecah / retak</option>
-<option>E-motor seret / macet</option>
 <option>Hazzard error</option>
 <option>Headlamp error</option>
 <option>Horn error</option>
