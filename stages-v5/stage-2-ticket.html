@@ -1,24 +1,72 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 2: Data Pool — MAKA ERP v5</title>
-<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:800px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--blue);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.top-bar{padding:10px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}.top-bar a{color:var(--blue);text-decoration:none;font-size:13px;font-weight:600}.top-bar .count{font-size:13px;color:var(--gray);margin-left:auto}table{width:100%;border-collapse:collapse;font-size:14px}th{background:var(--light);text-align:left;padding:12px 16px;font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;border-bottom:1px solid var(--border)}td{padding:12px 16px;border-bottom:1px solid var(--border)}tr:hover{background:#F9FAFB}.actions{padding:14px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;text-decoration:none;display:inline-block}.btn-primary{background:var(--orange);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}</style></head><body>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--border:#E5E7EB;--green:#10B981}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:800px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--blue);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.top-bar{padding:12px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}.top-bar a.btn-back{background:var(--blue);color:white;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600}.top-bar .count{font-size:13px;color:var(--gray);margin-left:auto}.vin-group{border-bottom:1px solid var(--border)}.vin-header{display:flex;align-items:center;gap:12px;padding:14px 24px;background:var(--light);cursor:pointer;user-select:none}.vin-header:hover{background:#E5E7EB}.vin-header .expand{font-size:12px;transition:transform .2s;color:var(--gray)}.vin-header .vin-label{font-family:monospace;font-size:15px;font-weight:700;color:var(--dark)}.vin-header .meta{font-size:12px;color:var(--gray);margin-left:8px}.vin-header .badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;margin-left:auto}.badge-problem{background:#FFF8F0;color:var(--orange)}.badge-accident{background:#FEF2F2;color:#EF4444}.badge-to{background:#F0FDF4;color:#059669}.trb-list{padding:4px 24px 12px 56px}table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;padding:8px 12px;font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;border-bottom:1px solid var(--border)}td{padding:8px 12px;border-bottom:1px solid #F3F4F6}.checkbox-col{width:32px}.actions{padding:14px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;text-decoration:none;display:inline-block}.btn-primary{background:var(--orange);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}</style></head><body>
 <div class="page">
-<div class="header"><div class="num">2</div><div><h1>Data Pool</h1><div class="sub">Stage 2/9 | Data dari Stage 1 — pilih untuk diproses</div></div></div>
+<div class="header"><div class="num">2</div><div><h1>Data Pool</h1><div class="sub">Stage 2/9 | Pilih TRB untuk diproses</div></div></div>
 <div class="card">
-<div class="top-bar"><a href="index.html" style="background:var(--blue);color:white;padding:6px 14px;border-radius:6px">← Back to Index</a><span class="count">7 data</span></div>
+<div class="top-bar"><a href="index.html" class="btn-back">← Index</a><span class="count">3 VIN &middot; 7 TRB</span></div>
+
+<!-- VIN GROUP 1 -->
+<div class="vin-group">
+<div class="vin-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+<span class="expand">▼</span>
+<input type="checkbox" checked onclick="event.stopPropagation()">
+<span class="vin-label">MKMAAB2C0SJ000525</span>
+<span class="meta">B 4334 SWC &middot; RTO TransGo</span>
+<span class="badge badge-problem">Unit Problem</span>
+</div>
+<div class="trb-list">
 <table>
-<thead><tr><th><input type="checkbox"></th><th>TRB Number</th><th>Tipe Unit</th><th>Tgl Masuk</th><th>Jam Masuk</th><th>Problem</th></tr></thead>
+<thead><tr><th class="checkbox-col"></th><th>TRB Number</th><th>Tgl Masuk</th><th>Jam Masuk</th><th>Problem</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox" checked></td><td><strong>TRB-128</strong></td><td>Unit Problem</td><td>13/05/2026</td><td>09:15</td><td>Motor mati (total power off)</td></tr>
-<tr><td><input type="checkbox" checked></td><td><strong>TRB-129</strong></td><td>Unit Problem</td><td>13/05/2026</td><td>09:15</td><td>Ban belakang oblak</td></tr>
-<tr><td><input type="checkbox"></td><td><strong>TRB-130</strong></td><td>Unit Problem</td><td>13/05/2026</td><td>09:15</td><td>Spion kendor</td></tr>
-<tr><td><input type="checkbox"></td><td><strong>TRB-126</strong></td><td>Unit Accident</td><td>12/05/2026</td><td>14:20</td><td>Accident — body retak</td></tr>
-<tr><td><input type="checkbox"></td><td><strong>TRB-125</strong></td><td>Unit TO</td><td>12/05/2026</td><td>11:30</td><td>PDI — finish input</td></tr>
-<tr><td><input type="checkbox"></td><td><strong>TRB-124</strong></td><td>Unit Pengganti</td><td>11/05/2026</td><td>08:45</td><td>Sudah diserahkan</td></tr>
-<tr><td><input type="checkbox"></td><td><strong>TRB-123</strong></td><td>Unit Accident</td><td>11/05/2026</td><td>16:10</td><td>Frame retak</td></tr>
+<tr><td><input type="checkbox" checked></td><td><strong>TRB-128</strong></td><td>13/05/2026</td><td>09:15</td><td>Motor mati (total power off)</td></tr>
+<tr><td><input type="checkbox" checked></td><td><strong>TRB-129</strong></td><td>13/05/2026</td><td>09:15</td><td>Ban belakang oblak</td></tr>
+<tr><td><input type="checkbox"></td><td><strong>TRB-130</strong></td><td>13/05/2026</td><td>09:15</td><td>Spion kendor</td></tr>
 </tbody>
 </table>
+</div>
+</div>
+
+<!-- VIN GROUP 2 -->
+<div class="vin-group">
+<div class="vin-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+<span class="expand">▼</span>
+<input type="checkbox" onclick="event.stopPropagation()">
+<span class="vin-label">MKMAAB2C0SJ000808</span>
+<span class="meta">B 4234 SWG &middot; RTO MAKA JKT</span>
+<span class="badge badge-accident">Unit Accident</span>
+</div>
+<div class="trb-list">
+<table>
+<thead><tr><th class="checkbox-col"></th><th>TRB Number</th><th>Tgl Masuk</th><th>Jam Masuk</th><th>Problem</th></tr></thead>
+<tbody>
+<tr><td><input type="checkbox"></td><td><strong>TRB-126</strong></td><td>12/05/2026</td><td>14:20</td><td>Accident — body retak</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- VIN GROUP 3 -->
+<div class="vin-group">
+<div class="vin-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+<span class="expand">▼</span>
+<input type="checkbox" onclick="event.stopPropagation()">
+<span class="vin-label">MKMAAB2C0SJ001091</span>
+<span class="meta">B 4521 SWF &middot; RTO MAKA SMG</span>
+<span class="badge badge-to">Unit Pengganti</span>
+</div>
+<div class="trb-list">
+<table>
+<thead><tr><th class="checkbox-col"></th><th>TRB Number</th><th>Tgl Masuk</th><th>Jam Masuk</th><th>Problem</th></tr></thead>
+<tbody>
+<tr><td><input type="checkbox"></td><td><strong>TRB-124</strong></td><td>11/05/2026</td><td>08:45</td><td>Sudah diserahkan</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
 <div class="actions">
 <a href="stage-1-receive.html" class="btn btn-outline">← Stage 1</a>
-<a href="stage-3-analisa.html" class="btn btn-primary">Process → Stage 3</a>
+<a href="stage-3-analisa.html" class="btn btn-primary">Process Selected → Stage 3</a>
 </div>
 </div>
 </div></body></html>
