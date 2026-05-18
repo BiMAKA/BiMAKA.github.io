@@ -1,51 +1,48 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 3: Analisa — MAKA ERP v5</title>
-<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB;--purple:#7C3AED}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:720px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--blue);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.progress{background:white;padding:12px 24px;display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--border);overflow-x:auto}.prog-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0}.prog-dot.done{background:var(--green)}.prog-dot.active{background:var(--blue);width:13px;height:13px}.prog-label{font-size:9px;color:var(--gray);margin:0 2px;white-space:nowrap}.prog-label.active{color:var(--dark);font-weight:600}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.info-banner{background:#F0F9FF;border-bottom:1px solid #BAE6FD;padding:10px 24px;font-size:13px;color:#0369A1;display:flex;align-items:center;gap:8px}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.field label .src{color:var(--orange);font-size:10px;margin-left:4px}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,53,.1)}.field textarea{resize:vertical;min-height:70px}.field input.readonly{background:#FFF8F0;border-style:dashed;color:var(--gray)}.field .hint{font-size:10px;color:var(--gray);margin-top:2px}.tag{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600}.tag-kc{background:#FEE2E2;color:#DC2626}.tag-sc{background:#DBEAFE;color:#1D4ED8}.routing-box{padding:12px;border-radius:8px;margin:8px 0;font-size:13px}.routing-kc{background:#FEF2F2;border:1px solid #FECACA}.routing-sc{background:#EFF6FF;border:1px solid #BFDBFE}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none}.btn-primary{background:var(--blue);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.nav-footer{display:flex;justify-content:center;gap:8px;margin-top:12px;font-size:11px;color:var(--gray)}.delta-box{background:#FEF2F2;border:1px solid #FECACA;padding:10px 14px;border-radius:8px;font-size:11px;margin:0 24px 16px}table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--light);text-align:left;padding:6px 10px}td{padding:4px 10px;border-bottom:1px solid var(--border)}@media(max-width:600px){.form-row,.form-row.cols-3{grid-template-columns:1fr}}</style></head><body>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Stage 3: Problem Analysis & Routing — MAKA ERP v5</title>
+<style>:root{--orange:#FF6B35;--blue:#004E89;--dark:#1A1A2E;--gray:#6B7280;--light:#F3F4F6;--white:#FFF;--green:#10B981;--red:#EF4444;--border:#E5E7EB}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:var(--dark);padding:24px;display:flex;justify-content:center}.page{max-width:760px;width:100%}.header{background:var(--dark);color:white;padding:20px 24px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px}.header .num{background:var(--blue);color:white;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0}.header h1{font-size:18px}.header .sub{font-size:12px;opacity:.7;margin-top:2px}.card{background:white;border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}.top-bar{padding:12px 24px;border-bottom:1px solid var(--border);text-align:left}.top-bar a{background:var(--blue);color:white;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;display:inline-block}.section-title{padding:12px 24px;font-weight:700;font-size:14px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}.form{padding:20px 24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-row.cols-1{grid-template-columns:1fr}.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase}.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;background:white}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}.field textarea{resize:vertical;min-height:70px}.routing-box{padding:12px;border-radius:8px;margin:8px 0;font-size:13px}.routing-kc{background:#FEF2F2;border:1px solid #FECACA}.routing-sc{background:#EFF6FF;border:1px solid #BFDBFE}.search-input{width:100%!important;padding:8px 12px!important;border:1.5px solid var(--border)!important;border-radius:8px 8px 0 0!important;font-size:13px!important;margin-bottom:0!important}.search-select{width:100%!important;border:1.5px solid var(--border)!important;border-top:none!important;border-radius:0 0 8px 8px!important;font-size:13px!important}.actions{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:12px;justify-content:space-between}.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;text-decoration:none;display:inline-block}.btn-primary{background:var(--orange);color:white}.btn-outline{background:white;color:var(--blue);border:1.5px solid var(--blue)}.other-box{display:none;margin-top:8px}.other-box input{width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0}table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--light);text-align:left;padding:6px 10px}td{padding:4px 10px;border-bottom:1px solid var(--border)}@media(max-width:600px){.form-row,.form-row.cols-3{grid-template-columns:1fr}}</style></head><body>
 <div class="page">
-<div class="header"><div class="num">3</div><div><h1>Problem Analysis &amp; Routing</h1><div class="sub">Stage 3/9 &nbsp;|&nbsp; Flow: Analisa → EV Core? → KC / SC</div></div></div>
-<div class="progress">
-<div class="prog-dot done"></div><span class="prog-label">Receive</span>
-<div class="prog-dot done"></div><span class="prog-label">Ticket</span>
-<div class="prog-dot active"></div><span class="prog-label active">Analisa</span>
-<div class="prog-dot"></div><span class="prog-label">PQR</span>
-<div class="prog-dot"></div><span class="prog-label">Parts</span>
-<div class="prog-dot"></div><span class="prog-label">Repair</span>
-<div class="prog-dot"></div><span class="prog-label">QC</span>
-<div class="prog-dot"></div><span class="prog-label">Handover</span>
-<div class="prog-dot"></div><span class="prog-label">Selesai</span>
-</div>
-<div class="card"><div style="padding:10px 24px;border-bottom:1px solid var(--border);text-align:left"><a href="index.html" style="background:var(--blue);color:white;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">← Back to Index</a></div>
-<div class="info-banner">🔍 Flow v5: <strong>Analisa Unit Problem</strong> → PQR Submission → EV Core? → KC / SC + Waiting List</div>
+<div class="header"><div class="num">3</div><div><h1>Problem Analysis &amp; Routing</h1><div class="sub">Stage 3/9 | Analisa → Routing → PQR</div></div></div>
+<div class="card">
+<div class="top-bar"><a href="index.html">← Back to Index</a></div>
 
-<div class="delta-box"><strong>🔄 v4 Update:</strong> Accident track sekarang punya Analisa sendiri: <strong>Analisa Unit Accident → Parts Estimation DINA → Aftersales Process → PQR Submission</strong>. Routing: EV Core→EV Core → KC (WM Pasar Rebo), Non EV/Accident → SC + Waiting List.</div>
-
-<div class="section-title">🏷️ Kategori & Diagnosa</div>
+<div class="section-title">🔍 Analisa Teknis</div>
 <div class="form">
-<div class="form-row cols-3">
-<div class="field"><label>Issue Category</label><select id="issueCategory"><option value="Accident - Accident">Accident</option>
+<div class="form-row cols-1">
+<div class="field">
+<label>Issue Category</label>
+<select id="issueCategory" onchange="switchDetail(this.value)"><option value="Accident">Accident</option>
 <option value="EV Core - Battery">EV Core - Battery</option>
 <option value="EV Core - MCU">EV Core - MCU</option>
 <option value="Non EV Core - Body / Frame">Non EV Core - Body / Frame</option>
 <option value="Non EV Core - Electrical">Non EV Core - Electrical</option>
-<option value="Non EV Core - Mechanical">Non EV Core - Mechanical</option></select></div>
-<div class="field"><label>Detail Issue </label><input type="text" id="detailSearch" placeholder="Cari detail issue..." onkeyup="filterDetailDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:14px">
-<input type="text" id="detailSearch" placeholder="Cari detail issue..." onkeyup="filterDetailDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:14px">
-<div id="detailContainer"><select id="detail_49749" class="detail-select" data-category="Accident - Accident" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Accident</option></select>
-<select id="detail_41359" class="detail-select" data-category="EV Core - Battery" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Battery boros</option>
+<option value="Non EV Core - Mechanical">Non EV Core - Mechanical</option></select>
+</div>
+</div>
+<div class="form-row">
+<div class="field">
+<label>Detail Issue</label>
+<input type="text" id="detailSearch" placeholder="Cari..." onkeyup="filterDetail(this.value)" class="search-input" style="width:100%">
+<div id="detailContainer"><select class="detail-select" data-cat="Accident" style="display:none"><option value="">Pilih detail issue...</option><option>Accident</option>
+<option>— Others —</option></select>
+<select class="detail-select" data-cat="EV Core - Battery" style="display:none"><option value="">Pilih detail issue...</option><option>Battery boros</option>
 <option>Battery error</option>
 <option>Battery mati total</option>
-<option>Battery over voltage</option></select>
-<select id="detail_33158" class="detail-select" data-category="EV Core - MCU" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Baut MCU berkarat</option>
+<option>Battery over voltage</option>
+<option>— Others —</option></select>
+<select class="detail-select" data-cat="EV Core - MCU" style="display:none"><option value="">Pilih detail issue...</option><option>Baut MCU berkarat</option>
 <option>MCU error</option>
-<option>MCU indicator ON</option></select>
-<select id="detail_58184" class="detail-select" data-category="Non EV Core - Body / Frame" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Body panel gap, tidak presisi</option>
+<option>MCU indicator ON</option>
+<option>— Others —</option></select>
+<select class="detail-select" data-cat="Non EV Core - Body / Frame" style="display:none"><option value="">Pilih detail issue...</option><option>Body panel gap, tidak presisi</option>
 <option>Body retak</option>
 <option>Bracket front cover patah</option>
 <option>Frame berkarat</option>
 <option>Frame miring / tidak simetris</option>
 <option>Frame patah</option>
 <option>Frame retak / patah</option>
-<option>Permukaan cat mengelupas</option></select>
-<select id="detail_26232" class="detail-select" data-category="Non EV Core - Electrical" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Charger error</option>
+<option>Permukaan cat mengelupas</option>
+<option>— Others —</option></select>
+<select class="detail-select" data-cat="Non EV Core - Electrical" style="display:none"><option value="">Pilih detail issue...</option><option>Charger error</option>
 <option>Charging indicator error / mati</option>
 <option>Charging indicator tidak balance</option>
 <option>Charging port basah</option>
@@ -73,8 +70,9 @@
 <option>Throttle error</option>
 <option>Turn signal error</option>
 <option>USB port error</option>
-<option>Warning indicator menyala</option></select>
-<select id="detail_47341" class="detail-select" data-category="Non EV Core - Mechanical" style="display:none"><option value="— Others —">— Others —</option><option value="">Pilih detail issue...</option><option>Ban belakang habis / tipis</option>
+<option>Warning indicator menyala</option>
+<option>— Others —</option></select>
+<select class="detail-select" data-cat="Non EV Core - Mechanical" style="display:none"><option value="">Pilih detail issue...</option><option>Ban belakang habis / tipis</option>
 <option>Ban belakang kurang angin / bocor</option>
 <option>Ban belakang sobek</option>
 <option>Ban depan habis / tipis</option>
@@ -148,140 +146,145 @@
 <option>Velg depan penyok</option>
 <option>Warna permukaan cat pudar</option>
 <option>Windshield baret</option>
-<option>Wiring Harness</option></select>
+<option>Wiring Harness</option>
+<option>— Others —</option></select>
 </div>
-<div id="detailOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis detail issue..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div><div id="detailOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis detail issue..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div><div id="detailOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis detail issue..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div></div>
-<div class="field"><label>Part Problem</label><div class="search-select" style="position:relative;width:100%">
-<input type="text" placeholder="Cari part problem..." onkeyup="filterDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--orange);border-radius:8px 8px 0 0;font-size:14px;background:white;box-sizing:border-box">
-<select id="partProblem" size="6" onchange="var f=document.getElementById('partOther');var t=this.parentElement.querySelector('input');t.value=this.value;if(this.value==='— Others —'){f.style.display='block'}else{f.style.display='none'}" style="width:100%;border:1.5px solid var(--orange);border-top:none;border-radius:0 0 8px 8px;font-size:13px;background:white;overflow-y:auto">
-<option value="Battery">Battery</option>
-<option value="Body Panel">Body Panel</option>
-<option value="Brake Hose">Brake Hose</option>
-<option value="Brakepad belakang">Brakepad belakang</option>
-<option value="Brakepad depan">Brakepad depan</option>
-<option value="Center Stand">Center Stand</option>
-<option value="Charger">Charger</option>
-<option value="Charging Indicator">Charging Indicator</option>
-<option value="Charging Port">Charging Port</option>
-<option value="Control Switch">Control Switch</option>
-<option value="Controller / MCU">Controller / MCU</option>
-<option value="DCDC converter">DCDC converter</option>
-<option value="Damper / Rear Suspension">Damper / Rear Suspension</option>
-<option value="Display">Display</option>
-<option value="E-Motor">E-Motor</option>
-<option value="Electrical">Electrical</option>
-<option value="Frame">Frame</option>
-<option value="Front Brake Caliper">Front Brake Caliper</option>
-<option value="Front Brake Disc">Front Brake Disc</option>
-<option value="Front Brake Hose">Front Brake Hose</option>
-<option value="Front Brake Master">Front Brake Master</option>
-<option value="Front Cover">Front Cover</option>
-<option value="Front Fender">Front Fender</option>
-<option value="Front Fork / Suspension">Front Fork / Suspension</option>
-<option value="Front Wheel">Front Wheel</option>
-<option value="HV Relay">HV Relay</option>
-<option value="Headlamp">Headlamp</option>
-<option value="Mirror">Mirror</option>
-<option value="PDU">PDU</option>
-<option value="Pillion Step">Pillion Step</option>
-<option value="Rear Brake Caliper">Rear Brake Caliper</option>
-<option value="Rear Brake Disc">Rear Brake Disc</option>
-<option value="Rear Brake Hose">Rear Brake Hose</option>
-<option value="Rear Brake Master">Rear Brake Master</option>
-<option value="Rear Center Light">Rear Center Light</option>
-<option value="Rear Cover">Rear Cover</option>
-<option value="Rear Fender">Rear Fender</option>
-<option value="Rear Grab">Rear Grab</option>
-<option value="Rear Wheel">Rear Wheel</option>
-<option value="Rear grab">Rear grab</option>
-<option value="Seat">Seat</option>
-<option value="Side Stand">Side Stand</option>
-<option value="Side and Center Cover">Side and Center Cover</option>
-<option value="Steering">Steering</option>
-<option value="Steering Cover">Steering Cover</option>
-<option value="Stem Assy">Stem Assy</option>
-<option value="Step Floor">Step Floor</option>
-<option value="Sticker & Emblem">Sticker & Emblem</option>
-<option value="Storage">Storage</option>
-<option value="Swing Arm">Swing Arm</option>
-<option value="Swing Arm Cover">Swing Arm Cover</option>
-<option value="Throttle">Throttle</option>
-<option value="USB port">USB port</option>
-<option value="Utility Box">Utility Box</option>
-<option value="Wheel">Wheel</option>
-<option value="Wiring harness">Wiring harness</option>
-<option value="— Others —">— Others —</option></select>
+<div id="detailOther" class="other-box"><input type="text" placeholder="Tulis detail issue..."></div>
 </div>
-<div id="partOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis part problem..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div></div>
-<div class="field"><label>PSG Emot Check </label><select><option selected>✅ Pass</option><option>❌ Fail</option><option>N/A</option></select></div>
+<div class="field">
+<label>Part Problem</label>
+<input type="text" id="partSearch" placeholder="Cari..." onkeyup="filterPart(this.value)" class="search-input" style="width:100%">
+<select id="partProblem" class="search-select" size="1" onchange="partChanged(this.value)"><option value="">Pilih part problem...</option><option>Battery</option>
+<option>Body Panel</option>
+<option>Brake Hose</option>
+<option>Brakepad belakang</option>
+<option>Brakepad depan</option>
+<option>Center Stand</option>
+<option>Charger</option>
+<option>Charging Indicator</option>
+<option>Charging Port</option>
+<option>Control Switch</option>
+<option>Controller / MCU</option>
+<option>DCDC converter</option>
+<option>Damper / Rear Suspension</option>
+<option>Display</option>
+<option>E-Motor</option>
+<option>Electrical</option>
+<option>Frame</option>
+<option>Front Brake Caliper</option>
+<option>Front Brake Disc</option>
+<option>Front Brake Hose</option>
+<option>Front Brake Master</option>
+<option>Front Cover</option>
+<option>Front Fender</option>
+<option>Front Fork / Suspension</option>
+<option>Front Wheel</option>
+<option>HV Relay</option>
+<option>Headlamp</option>
+<option>Mirror</option>
+<option>PDU</option>
+<option>Pillion Step</option>
+<option>Rear Brake Caliper</option>
+<option>Rear Brake Disc</option>
+<option>Rear Brake Hose</option>
+<option>Rear Brake Master</option>
+<option>Rear Center Light</option>
+<option>Rear Cover</option>
+<option>Rear Fender</option>
+<option>Rear Grab</option>
+<option>Rear Wheel</option>
+<option>Rear grab</option>
+<option>Seat</option>
+<option>Side Stand</option>
+<option>Side and Center Cover</option>
+<option>Steering</option>
+<option>Steering Cover</option>
+<option>Stem Assy</option>
+<option>Step Floor</option>
+<option>Sticker & Emblem</option>
+<option>Storage</option>
+<option>Swing Arm</option>
+<option>Swing Arm Cover</option>
+<option>Throttle</option>
+<option>USB port</option>
+<option>Utility Box</option>
+<option>Wheel</option>
+<option>Wiring harness</option>
+<option>— Others —</option></select>
+<div id="partOther" class="other-box"><input type="text" placeholder="Tulis part problem..."></div>
 </div>
-<div class="form-row cols-1"><div class="field"><label>Hasil Analisa Teknis</label><textarea>Stator coil terbakar — ganti e-motor assembly. Controller/MCU normal. Root cause: overheating beban berlebih.</textarea></div></div>
+</div>
+<div class="form-row cols-1">
+<div class="field">
+<label>Hasil Analisa Teknis</label>
+<textarea placeholder="Deskripsi hasil analisa oleh teknisi...">E-Motor stator coil terbakar. Perlu penggantian assembly. Tidak ada kerusakan pada komponen terkait lainnya.</textarea>
+</div>
+</div>
 </div>
 
-<div class="section-title">📊 Mapping Sumber Data</div>
+<div class="section-title">📋 Routing</div>
 <div class="form">
-<table><tr><th>Field</th><th>Sheet</th><th>Kolom</th></tr>
-<tr><td>Issue Category</td><td>Problem Tracker</td><td>Col L</td></tr>
-<tr><td>Detail Issue</td><td>Problem Tracker</td><td>Col M</td></tr>
-<tr><td>MDT Check</td><td>Problem Tracker</td><td>Col O</td></tr>
-<tr><td>PSG Emot</td><td>Problem Tracker</td><td>Col P</td></tr>
-<tr><td>PIC Inspeksi</td><td>SSOT</td><td>Col M</td></tr>
-<tr><td>Routing KC/SC</td><td>—</td><td>⚠️ Auto v5</td></tr>
-</table>
+<div class="routing-box routing-kc"><strong>Auto-Routing: EV Core → KC</strong><br><span style="font-size:11px;color:var(--gray)">EV Core langsung ke KC — bypass Waiting List. Non EV Core & Accident → SC + masuk Waiting List.</span></div>
+<div class="form-row">
+<div class="field"><label>Routing</label><select><option selected>KC — EV Core Repair (WM Pasar Rebo)</option><option>SC — Service Center + Waiting List</option></select></div>
+<div class="field"><label>PIC Analisa</label><input type="text" placeholder="Nama teknisi..." value="Rico"></div>
 </div>
+</div>
+
+<div class="section-title">📊 Field Mapping</div>
+<div class="form" style="font-size:12px;color:var(--gray)">
+<table><tr><th>Field</th><th>Source</th></tr>
+<tr><td>Issue Category</td><td>Problem Tracker col L</td></tr>
+<tr><td>Detail Issue</td><td>Problem Tracker col M</td></tr>
+<tr><td>Part Problem</td><td>Problem Tracker col W</td></tr>
+<tr><td>Routing</td><td>SSOT col M</td></tr>
+</table></div>
 
 <div class="actions">
-<button class="btn btn-outline">← Stage 2: Ticket</button>
-<a href="stage-4-pqr.html" style="text-decoration:none"><button class="btn btn-primary">Lanjut → Stage 4: PQR</button></a>
+<a href="stage-2-ticket.html" class="btn btn-outline">← Stage 2</a>
+<a href="stage-4-pqr.html" class="btn btn-primary">Lanjut → Stage 4: PQR</a>
 </div>
 </div>
-<div class="nav-footer">■ Stage 3/9 &nbsp;|&nbsp; Analisa & Routing &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
 </div>
-
-
 <script>
-function filterDropdown(input) {
-  var filter = input.value.toLowerCase();
-  var select = input.parentElement.querySelector('select');
-  for (var i = 0; i < select.options.length; i++) {
-    var txt = select.options[i].text.toLowerCase();
-    select.options[i].style.display = txt.indexOf(filter) > -1 ? '' : 'none';
-  }
-}
-function filterDetailDropdown(input) {
-  var filter = input.value.toLowerCase();
-  var selects = document.querySelectorAll('#detailContainer select');
-  selects.forEach(function(select) {
-    if (select.offsetParent !== null) {
-      for (var i = 0; i < select.options.length; i++) {
-        var txt = select.options[i].text.toLowerCase();
-        select.options[i].style.display = txt.indexOf(filter) > -1 ? '' : 'none';
-      }
-    }
+// Initialize: show first category
+var issueCat = document.getElementById('issueCategory');
+switchDetail(issueCat.value);
+
+function switchDetail(cat) {
+  document.querySelectorAll('.detail-select').forEach(function(s) {
+    s.style.display = s.getAttribute('data-cat') === cat ? 'block' : 'none';
   });
+  document.getElementById('detailOther').style.display = 'none';
+  document.getElementById('detailSearch').value = '';
+  filterDetail('');
 }
-document.querySelectorAll('#detailContainer select').forEach(function(s) {
+
+document.querySelectorAll('.detail-select').forEach(function(s) {
   s.addEventListener('change', function() {
-    var otherBox = document.getElementById('detailOther');
-    if (this.value === '— Others —') {
-      otherBox.style.display = 'block';
-    } else {
-      otherBox.style.display = 'none';
-    }
+    document.getElementById('detailOther').style.display = this.value === '— Others —' ? 'block' : 'none';
   });
 });
-</script>
-function filterDetailDropdown(input) {
-  var filter = input.value.toLowerCase();
-  var selects = document.querySelectorAll('#detailContainer select');
-  selects.forEach(function(select) {
-    if (select.style.display === 'block' || !select.style.display) {
-      for (var i = 0; i < select.options.length; i++) {
-        var txt = select.options[i].text.toLowerCase();
-        select.options[i].style.display = txt.indexOf(filter) > -1 ? '' : 'none';
-      }
-    }
-  });
+
+function filterDetail(q) {
+  var sel = document.querySelector('.detail-select[style*="block"], .detail-select:not([style])');
+  if (!sel) return;
+  q = q.toLowerCase();
+  for (var i = 0; i < sel.options.length; i++) {
+    sel.options[i].style.display = sel.options[i].text.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+  }
 }
 
+function filterPart(q) {
+  var sel = document.getElementById('partProblem');
+  q = q.toLowerCase();
+  for (var i = 0; i < sel.options.length; i++) {
+    sel.options[i].style.display = sel.options[i].text.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+  }
+}
+
+function partChanged(val) {
+  document.getElementById('partOther').style.display = val === '— Others —' ? 'block' : 'none';
+}
+</script>
 </body></html>
