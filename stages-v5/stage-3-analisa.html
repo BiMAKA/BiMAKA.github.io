@@ -27,7 +27,9 @@
 <option value="Non EV Core - Body / Frame">Non EV Core - Body / Frame</option>
 <option value="Non EV Core - Electrical">Non EV Core - Electrical</option>
 <option value="Non EV Core - Mechanical">Non EV Core - Mechanical</option></select></div>
-<div class="field"><label>Detail Issue </label><div id="detailContainer"><select id="detail_49749" class="detail-select" data-category="Accident - Accident" style="display:none"><option value="">Pilih detail issue...</option><option>Accident</option></select>
+<div class="field"><label>Detail Issue </label><input type="text" id="detailSearch" placeholder="Cari detail issue..." onkeyup="filterDetailDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:14px">
+<input type="text" id="detailSearch" placeholder="Cari detail issue..." onkeyup="filterDetailDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;font-size:14px">
+<div id="detailContainer"><select id="detail_49749" class="detail-select" data-category="Accident - Accident" style="display:none"><option value="">Pilih detail issue...</option><option>Accident</option></select>
 <select id="detail_41359" class="detail-select" data-category="EV Core - Battery" style="display:none"><option value="">Pilih detail issue...</option><option>Battery boros</option>
 <option>Battery error</option>
 <option>Battery mati total</option>
@@ -149,18 +151,68 @@
 <option>Wiring Harness</option></select>
 </div>
 <div id="detailOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis detail issue..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div><div id="detailOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis detail issue..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div><div id="detailOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis detail issue..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div></div>
-<div class="field"><label>Sub-Komponen</label><input type="text" value="Stator coil"></div>
+<div class="field"><label>Part Problem</label><div class="search-select" style="position:relative;width:100%">
+<input type="text" placeholder="Cari part problem..." onkeyup="filterDropdown(this)" style="width:100%;padding:10px 12px;border:1.5px solid var(--orange);border-radius:8px 8px 0 0;font-size:14px;background:white;box-sizing:border-box">
+<select id="partProblem" size="6" onchange="var f=document.getElementById('partOther');var t=this.parentElement.querySelector('input');t.value=this.value;if(this.value==='— Others —'){f.style.display='block'}else{f.style.display='none'}" style="width:100%;border:1.5px solid var(--orange);border-top:none;border-radius:0 0 8px 8px;font-size:13px;background:white;overflow-y:auto">
+<option value="Battery">Battery</option>
+<option value="Body Panel">Body Panel</option>
+<option value="Brake Hose">Brake Hose</option>
+<option value="Brakepad belakang">Brakepad belakang</option>
+<option value="Brakepad depan">Brakepad depan</option>
+<option value="Center Stand">Center Stand</option>
+<option value="Charger">Charger</option>
+<option value="Charging Indicator">Charging Indicator</option>
+<option value="Charging Port">Charging Port</option>
+<option value="Control Switch">Control Switch</option>
+<option value="Controller / MCU">Controller / MCU</option>
+<option value="DCDC converter">DCDC converter</option>
+<option value="Damper / Rear Suspension">Damper / Rear Suspension</option>
+<option value="Display">Display</option>
+<option value="E-Motor">E-Motor</option>
+<option value="Electrical">Electrical</option>
+<option value="Frame">Frame</option>
+<option value="Front Brake Caliper">Front Brake Caliper</option>
+<option value="Front Brake Disc">Front Brake Disc</option>
+<option value="Front Brake Hose">Front Brake Hose</option>
+<option value="Front Brake Master">Front Brake Master</option>
+<option value="Front Cover">Front Cover</option>
+<option value="Front Fender">Front Fender</option>
+<option value="Front Fork / Suspension">Front Fork / Suspension</option>
+<option value="Front Wheel">Front Wheel</option>
+<option value="HV Relay">HV Relay</option>
+<option value="Headlamp">Headlamp</option>
+<option value="Mirror">Mirror</option>
+<option value="PDU">PDU</option>
+<option value="Pillion Step">Pillion Step</option>
+<option value="Rear Brake Caliper">Rear Brake Caliper</option>
+<option value="Rear Brake Disc">Rear Brake Disc</option>
+<option value="Rear Brake Hose">Rear Brake Hose</option>
+<option value="Rear Brake Master">Rear Brake Master</option>
+<option value="Rear Center Light">Rear Center Light</option>
+<option value="Rear Cover">Rear Cover</option>
+<option value="Rear Fender">Rear Fender</option>
+<option value="Rear Grab">Rear Grab</option>
+<option value="Rear Wheel">Rear Wheel</option>
+<option value="Rear grab">Rear grab</option>
+<option value="Seat">Seat</option>
+<option value="Side Stand">Side Stand</option>
+<option value="Side and Center Cover">Side and Center Cover</option>
+<option value="Steering">Steering</option>
+<option value="Steering Cover">Steering Cover</option>
+<option value="Stem Assy">Stem Assy</option>
+<option value="Step Floor">Step Floor</option>
+<option value="Sticker & Emblem">Sticker & Emblem</option>
+<option value="Storage">Storage</option>
+<option value="Swing Arm">Swing Arm</option>
+<option value="Swing Arm Cover">Swing Arm Cover</option>
+<option value="Throttle">Throttle</option>
+<option value="USB port">USB port</option>
+<option value="Utility Box">Utility Box</option>
+<option value="Wheel">Wheel</option>
+<option value="Wiring harness">Wiring harness</option>
+<option value="— Others —">— Others —</option></select>
 </div>
-
-<div class="routing-box routing-kc"><strong>🔴 Auto-Routing: EV Core → KC</strong><br><span style="font-size:11px;color:var(--gray)">EV Core langsung ke KC — <strong>bypass Waiting List</strong>. Non EV Core & Accident → SC + masuk Waiting List (Non EV, Accident, Unit TO/Pengganti).</span></div>
-
-<div class="form-row">
-<div class="field"><label>PIC Inspeksi </label><input type="text" value="Akbar AJG"></div>
-<div class="field"><label>Tgl Inspeksi</label><input type="date" value="2026-05-13"></div>
-</div>
-
-<div class="form-row">
-<div class="field"><label>MDT Check </label><select><option selected>✅ Pass</option><option>❌ Fail</option></select></div>
+<div id="partOther" style="display:none;margin-top:8px"><input type="text" placeholder="Tulis part problem..." style="width:100%;padding:10px;border:1.5px dashed var(--orange);border-radius:8px;font-size:14px;background:#FFF8F0"></div></div>
 <div class="field"><label>PSG Emot Check </label><select><option selected>✅ Pass</option><option>❌ Fail</option><option>N/A</option></select></div>
 </div>
 <div class="form-row cols-1"><div class="field"><label>Hasil Analisa Teknis</label><textarea>Stator coil terbakar — ganti e-motor assembly. Controller/MCU normal. Root cause: overheating beban berlebih.</textarea></div></div>
@@ -185,13 +237,41 @@
 </div>
 <div class="nav-footer">■ Stage 3/9 &nbsp;|&nbsp; Analisa & Routing &nbsp;|&nbsp; MAKA After-Sales ERP v5</div>
 </div>
+
+
 <script>
-document.querySelectorAll('.detail-select').forEach(s => s.style.display = 'none');
-document.getElementById('issueCategory').addEventListener('change', function() {
-  var cat = this.value;
-  document.querySelectorAll('.detail-select').forEach(function(s) {
-    s.style.display = s.getAttribute('data-category') === cat ? 'block' : 'none';
+function filterDropdown(input) {
+  var filter = input.value.toLowerCase();
+  var select = input.parentElement.querySelector('select');
+  for (var i = 0; i < select.options.length; i++) {
+    var txt = select.options[i].text.toLowerCase();
+    select.options[i].style.display = txt.indexOf(filter) > -1 ? '' : 'none';
+  }
+}
+function filterDetailDropdown(input) {
+  var filter = input.value.toLowerCase();
+  var selects = document.querySelectorAll('#detailContainer select');
+  selects.forEach(function(select) {
+    if (select.offsetParent !== null) {
+      for (var i = 0; i < select.options.length; i++) {
+        var txt = select.options[i].text.toLowerCase();
+        select.options[i].style.display = txt.indexOf(filter) > -1 ? '' : 'none';
+      }
+    }
   });
-});
+}
 </script>
+function filterDetailDropdown(input) {
+  var filter = input.value.toLowerCase();
+  var selects = document.querySelectorAll('#detailContainer select');
+  selects.forEach(function(select) {
+    if (select.style.display === 'block' || !select.style.display) {
+      for (var i = 0; i < select.options.length; i++) {
+        var txt = select.options[i].text.toLowerCase();
+        select.options[i].style.display = txt.indexOf(filter) > -1 ? '' : 'none';
+      }
+    }
+  });
+}
+
 </body></html>
