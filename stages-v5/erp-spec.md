@@ -216,3 +216,33 @@ Data Pool → centang TRB-128, TRB-129, TRB-132
 ### Filter & Sort
 - Filter: Hari / Minggu / Bulan / Custom date range
 - Sort by: Active TRB, Completed, SLA Rate, Avg Time
+
+---
+
+## Parts Page (`/parts`)
+**Current:** Empty/minimal  
+**Target:** Central hub parts management (internal only — ERP Retail integration dibahas terpisah)
+
+### 1. Stock Overview
+- Matrix view: Parts x Lokasi (WM, RDL, KGD, DPK, GSP, BKS)
+- 235 part items dengan qty per lokasi
+- Color coding: 🟢 >3, 🟡 1-3, 🔴 0
+
+### 2. Inventory Alerts
+- ⚠️ Minimum stock (<3) warning per lokasi
+- 🔴 Out of stock auto-highlight
+- Re-order suggestion → bisa trigger notif ke procurement
+
+### 3. Cross-Location Transfer
+- Request parts dari lokasi A ke lokasi B
+- Stock visibility antar lokasi
+- Approval flow (supervisor → transfer)
+
+### 4. TRB Parts Tracker
+- Tabel: TRB | Part Name | Part Number | Status (Ready/Ordered/No Stock) | Lokasi | ETA
+- Filter by status, lokasi
+- Flag TRB yang parts-nya belum lengkap
+
+### 5. ERP Retail Integration (TBD)
+- Current: https://erp.maka-retail.com/app/home untuk PO, arrival doc, invoicing
+- Diskusi terpisah dengan Marcos & Dito: integrasi atau standalone
