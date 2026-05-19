@@ -849,14 +849,16 @@ function toggleClaimParts(val) {
 }
 var claimRowCount = 0;
 function addClaimRow() {
-  claimRowCount++;
   var container = document.getElementById('claimPartsList');
-  var idx = claimRowCount;
-  var div = document.createElement('div');
-  div.className = 'claim-part-row';
-  div.style.cssText = 'display:grid;grid-template-columns:2fr 1fr 80px 30px;gap:8px;align-items:end;margin-bottom:12px';
-  div.innerHTML = '<div class="field"><input type="text" placeholder="Ketik untuk mencari..." onkeyup="filterClaimSearchN(this,'+idx+')" class="search-input"><select onchange="updateClaimPartNumberN(this,'+idx+')" class="search-select claim-sel" size="1"><option value="">Pilih part...</option>{opts_escaped}</select></div><div class="field"><input type="text" class="readonly claim-pn" readonly placeholder="Auto-fill"></div><div class="field"><input type="number" value="1" min="1" placeholder="Qty"></div><button onclick="removeClaimRow(this)" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:8px 0">✕</button>';
-  container.appendChild(div);
+  var firstRow = container.querySelector('.claim-part-row');
+  var clone = firstRow.cloneNode(true);
+  // Reset values
+  clone.querySelector('.search-input').value = '';
+  clone.querySelector('.claim-pn').value = '';
+  clone.querySelector('input[type=number]').value = '1';
+  // Reset select
+  clone.querySelector('select').selectedIndex = 0;
+  container.appendChild(clone);
 }
 function removeClaimRow(btn) {
   var rows = document.querySelectorAll('.claim-part-row');
