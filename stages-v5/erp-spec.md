@@ -400,3 +400,37 @@ Stage 6 (Repair done) → Stage 7 QC → ✅ Yes → Stage 8
 | Problem Solved? | Yes / No |
 | ➤ If No | Reason textarea + [Loop to Stage 6 Repair] |
 | ➤ If Yes | [Advance → Stage 8 Handover] |
+
+---
+
+## Stage 8 — Handover (`/orders/{id}/handover`)
+**NEW PAGE** — Dari Order Detail stepper "Handover"
+
+### 1. Handover Info
+| Field | Type |
+|---|---|
+| Tanggal Serah Terima | Date |
+| PIC Serah Terima | Dropdown: CC (Arfie, Yulia, CC Agents) + OPS (Marthin, Akbar, Fenda, Eko) |
+| Diterima Oleh | Freetext |
+| No HP Penerima | Read-only |
+
+### 2. Opsi Unit
+| Field | Type |
+|---|---|
+| Status Unit | Dropdown: Dikembalikan ke Customer / Unit RTS |
+
+### 3. Jika Unit RTS
+Customer tidak lanjut sewa-milik → unit masuk pool Ready-to-Sell:
+- Auto update MASTER_UNIT status → READY ASSET / READY TO RENT
+- Notif ke OPS (Marthin, Akbar)
+
+### 4. Kondisi Unit
+| Field | Type |
+|---|---|
+| ODO Akhir | Freetext |
+| Kondisi Fisik | OK / Ada Catatan |
+| Catatan | Textarea |
+
+### 5. Konfirmasi
+- [Konfirmasi Handover → Stage 9 Done]
+- WA notification "Unit Siap Ambil" (jika customer take over)
