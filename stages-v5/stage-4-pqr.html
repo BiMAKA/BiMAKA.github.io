@@ -320,10 +320,10 @@
 <div class="field"><label>Requested Part for Claim</label><select onchange="toggleClaimParts(this.value)"><option>No</option><option>Yes</option></select></div>
 </div>
 <div id="claimPartsSection" style="display:none">
-<div class="form-row">
-<div class="field"><label>Claim Part Name <span style="font-size:10px;color:var(--gray)">Search</span></label>
-<input type="text" placeholder="Ketik untuk mencari..." onkeyup="filterClaimSearch(this)" class="search-input">
-<select onchange="updateClaimPartNumber(this)" class="search-select" size="1">
+<div class="form-row cols-1"><div class="field"><label>Claim Parts List</label></div></div>
+<div id="claimPartsList">
+<div class="claim-part-row" style="display:grid;grid-template-columns:2fr 1fr 80px 30px;gap:8px;align-items:end;margin-bottom:12px">
+<div class="field"><input type="text" placeholder="Ketik untuk mencari..." onkeyup="filterClaimSearchN(this,0)" class="search-input"><select onchange="updateClaimPartNumberN(this,0)" class="search-select claim-sel" size="1">
 <option value="">Pilih part...</option>
 <option value="AXLE FR, WHEEL">AXLE FR, WHEEL</option>
 <option value="BALL, STEEL DIA. 6MM">BALL, STEEL DIA. 6MM</option>
@@ -561,9 +561,12 @@
 <option value="WINDSHIELD">WINDSHIELD</option>
 <option value="WIRING HARNESS MAIN">WIRING HARNESS MAIN</option>
 </select></div>
-<div class="field"><label>Part Number <span style="font-size:9px;color:#6D28D9">Auto-fill</span></label><input type="text" id="claimPartNumber" class="readonly" readonly></div>
+<div class="field"><input type="text" class="readonly claim-pn" readonly placeholder="Auto-fill"></div>
+<div class="field"><input type="number" value="1" min="1" placeholder="Qty"></div>
+<button onclick="removeClaimRow(this)" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:8px 0">✕</button>
 </div>
-<div class="form-row"><div class="field"><label>Qty</label><input type="number" value="1" min="1" style="width:100px"></div></div>
+</div>
+<button onclick="addClaimRow()" style="background:white;color:var(--orange);border:2px dashed var(--orange);width:100%;padding:10px;border-radius:8px;font-size:13px;cursor:pointer;margin-top:8px">+ Add Part</button>
 </div></div>
 
 <div class="section-title">📸 Visual Damage & Attachment</div>
@@ -594,7 +597,7 @@
 </div>
 </div>
 </div><script>
-var partsMap = { "AXLE FR, WHEEL": "SPR-047-MCH-AFW",
+var partsMap = {   "AXLE FR, WHEEL": "SPR-047-MCH-AFW",
 "BALL, STEEL DIA. 6MM": "SPR-028-MCH-BSD",
 "BATTERY": "SPR-114-ELC-BAT",
 "BEARING ASSY LOWER, STEM": "SPR-229-MCH-BSL",
@@ -828,40 +831,49 @@ var partsMap = { "AXLE FR, WHEEL": "SPR-047-MCH-AFW",
 "WASHER RUBBER": "SPR-020-MCH-WRB",
 "WELL NUT M5": "SPR-087-MCH-WNM",
 "WINDSHIELD": "SPR-227-MCH-WSD",
-"WIRING HARNESS MAIN": "SPR-228-MCH-WHM" };
-function updatePartNumber(select) {
+"WIRING HARNESS MAIN": "SPR-228-MCH-WHM"   }};
+function updatePartNumber(select) {{
   var pnInput = document.getElementById('partNumber');
-  if (select.value && partsMap[select.value]) {
-    pnInput.value = partsMap[select.value];
-  } else {
-    pnInput.value = '';
-  }
-}
-function filterPartSearch(input) {
+  if (select.value && partsMap[select.value]) {{ pnInput.value = partsMap[select.value]; }}
+  else {{ pnInput.value = ''; }}
+}}
+function filterPartSearch(input) {{
   var q = input.value.toLowerCase();
   var sel = input.parentElement.querySelector('select');
-  for (var i = 0; i < sel.options.length; i++) {
+  for (var i = 0; i < sel.options.length; i++) {{
     sel.options[i].style.display = sel.options[i].text.toLowerCase().indexOf(q) > -1 ? '' : 'none';
-  }
-}
-function toggleClaimParts(val) {
-  var div = document.getElementById('claimPartsSection');
-  div.style.display = val === 'Yes' ? 'block' : 'none';
-}
-function updateClaimPartNumber(select) {
-  var pnInput = document.getElementById('claimPartNumber');
-  if (select.value && partsMap[select.value]) {
-    pnInput.value = partsMap[select.value];
-  } else {
-    pnInput.value = '';
-  }
-}
-function filterClaimSearch(input) {
+  }}
+}}
+function toggleClaimParts(val) {{
+  document.getElementById('claimPartsSection').style.display = val === 'Yes' ? 'block' : 'none';
+}}
+var claimRowCount = 0;
+function addClaimRow() {{
+  claimRowCount++;
+  var container = document.getElementById('claimPartsList');
+  var idx = claimRowCount;
+  var div = document.createElement('div');
+  div.className = 'claim-part-row';
+  div.style.cssText = 'display:grid;grid-template-columns:2fr 1fr 80px 30px;gap:8px;align-items:end;margin-bottom:12px';
+  div.innerHTML = '<div class="field"><input type="text" placeholder="Ketik untuk mencari..." onkeyup="filterClaimSearchN(this,'+idx+')" class="search-input"><select onchange="updateClaimPartNumberN(this,'+idx+')" class="search-select claim-sel" size="1"><option value="">Pilih part...</option>{opts_escaped}</select></div><div class="field"><input type="text" class="readonly claim-pn" readonly placeholder="Auto-fill"></div><div class="field"><input type="number" value="1" min="1" placeholder="Qty"></div><button onclick="removeClaimRow(this)" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:8px 0">✕</button>';
+  container.appendChild(div);
+}}
+function removeClaimRow(btn) {{
+  var rows = document.querySelectorAll('.claim-part-row');
+  if (rows.length > 1) {{ btn.parentElement.remove(); }}
+}}
+function updateClaimPartNumberN(select, idx) {{
+  var row = select.closest('.claim-part-row');
+  var pnInput = row.querySelector('.claim-pn');
+  if (select.value && partsMap[select.value]) {{ pnInput.value = partsMap[select.value]; }}
+  else {{ pnInput.value = ''; }}
+}}
+function filterClaimSearchN(input, idx) {{
   var q = input.value.toLowerCase();
   var sel = input.parentElement.querySelector('select');
-  for (var i = 0; i < sel.options.length; i++) {
+  for (var i = 0; i < sel.options.length; i++) {{
     sel.options[i].style.display = sel.options[i].text.toLowerCase().indexOf(q) > -1 ? '' : 'none';
-  }
-}
+  }}
+}}
 </script>
 </body></html>
