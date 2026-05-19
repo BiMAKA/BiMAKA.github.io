@@ -192,3 +192,27 @@ Data Pool → centang TRB-128, TRB-129, TRB-132
          → [Batch Update ▼] pilih "Inspeksi"
          → semua TRB advance ke Inspeksi sekaligus
 ```
+
+---
+
+## Mechanics Page (`/mechanics`)
+**Current:** Just a list of names  
+**Target:** Productivity dashboard
+
+### Per Mechanic Card
+| Feature | Detail |
+|---|---|
+| Nama | Arief, Rico, Empud, Inta, Suhada, Heri, Agus, Dion, Asef, Jua, Jagat, Zainal |
+| Active TRB | Count TRB yang sedang dikerjakan |
+| Completed | Count TRB selesai (hari/minggu/bulan) |
+| Avg Repair Time | Rata-rata waktu perbaikan |
+| SLA Hit Rate | % selesai sesuai SLA target |
+
+### Detail View (klik mekanik)
+- List TRB aktif: VIN, Problem, Status, Lama pengerjaan
+- History completed minggu/bulan ini
+- Performance chart (SLA vs actual)
+
+### Filter & Sort
+- Filter: Hari / Minggu / Bulan / Custom date range
+- Sort by: Active TRB, Completed, SLA Rate, Avg Time
