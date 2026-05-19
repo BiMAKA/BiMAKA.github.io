@@ -280,3 +280,22 @@ Parts dari PQR auto-included, bisa ditambah/dikurangi mekanik.
 ### 5. Flags
 - ⚠️ Parts pending → tidak bisa advance ke Repair
 - ✅ All ready → button aktif
+
+### 6. Cost Estimation (auto dari Price List)
+**Price List Parts:** 235 item (SPR-XXX) — pakai **Price include tax**
+**Price List Jasa:** ~160 item (SERVS-XXXXX) — pakai **Price include tax**
+
+Per TRB, sistem auto-kalkulasi:
+| TRB | Parts | Jasa | Total |
+|---|---|---|---|
+| TRB-128 | E-Motor Assy: 3.500.000 + Thermal Sensor: 8.658 | Penggantian e-motor: 495.495 + MDT Check: 49.550 | **4.053.703** |
+
+- Parts: searchable dropdown 235 item → auto-fill Item Code + Price (include tax)
+- Jasa: searchable dropdown ~160 item → auto-fill Item Code + Price (include tax)
+- **[+ Add Part]** / **[+ Add Jasa]** buttons
+- Running total auto-update
+- Warranty vs non-warranty flag per item
+
+**Data Sources:**
+- Parts: `1joxesKfdA-72iR9_iz0gmzd8uQ7GcCU0kz3lFK2ZTA4` tab "Price List Parts"
+- Jasa: `1joxesKfdA-72iR9_iz0gmzd8uQ7GcCU0kz3lFK2ZTA4` tab "Price List Jasa"
