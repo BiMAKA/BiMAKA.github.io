@@ -372,3 +372,31 @@ Checklist centang pas item selesai dikerjakan:
 
 ### 4. Actions
 - [Mark Complete → Stage 7 QC]
+
+---
+
+## Stage 7 — QC & Testride (`/orders/{id}/qc`)
+**NEW PAGE** — Dari Order Detail stepper "QC"
+
+### Flow
+Stage 6 (Repair done) → Stage 7 QC → ✅ Yes → Stage 8
+                                    → ❌ No → 🔄 Stage 6
+
+### 1. QC Check
+| Field | Type |
+|---|---|
+| PIC QC | Dropdown: Arief, Rico, Empud |
+| QC Date | Date |
+| Visual Check | Pass / Fail |
+| Functional Check | Pass / Fail |
+| MDT Re-check | Pass / Fail + upload screen capture |
+| Testride | Pass / Fail |
+| Testride ODO | Freetext |
+| QC Notes | Textarea |
+
+### 2. Decision
+| Field | Type |
+|---|---|
+| Problem Solved? | Yes / No |
+| ➤ If No | Reason textarea + [Loop to Stage 6 Repair] |
+| ➤ If Yes | [Advance → Stage 8 Handover] |
