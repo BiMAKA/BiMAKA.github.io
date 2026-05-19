@@ -347,3 +347,28 @@ JASA
 - Harga = Price include tax dari Price List
 - Running total update real-time
 - Warranty flag per item (✅/❌)
+
+---
+
+## Stage 6 — Repair (`/orders/{id}/repair`)
+**NEW PAGE** — Dari Order Detail stepper "Repair"
+
+### 1. Header
+| Field | Type |
+|---|---|
+| TRB Number | Read-only |
+| Problem Title | Read-only |
+| PIC | Dropdown: Arief, Rico, Empud (team AFS) |
+| Status | In Progress / On Hold / Done |
+
+### 2. Parts & Jasa Checklist (carry-over dari Stage 5)
+Checklist centang pas item selesai dikerjakan:
+- Parts list dengan checkbox per item
+- Jasa list dengan checkbox per item
+
+### 3. Progress Notes
+- [Add Progress Note] → textarea + timestamp
+- Timeline log: "10:00 — Repair started (Rico)"
+
+### 4. Actions
+- [Mark Complete → Stage 7 QC]
