@@ -299,3 +299,51 @@ Per TRB, sistem auto-kalkulasi:
 **Data Sources:**
 - Parts: `1joxesKfdA-72iR9_iz0gmzd8uQ7GcCU0kz3lFK2ZTA4` tab "Price List Parts"
 - Jasa: `1joxesKfdA-72iR9_iz0gmzd8uQ7GcCU0kz3lFK2ZTA4` tab "Price List Jasa"
+
+### 7. Parts & Jasa Sections (Multi-Add)
+
+**Sequence: "Add" button → new row → searchable dropdown → auto-fill → qty → price**
+
+#### Parts Section
+```
+PARTS
+┌──────────────────────────────────────────────────────────────┐
+│ 🔍 Cari part...                                              │
+│ ┌──────────────────────────────────────────────────────────┐ │
+│ │ Part Name                   | Code     | Qty | Price     │ │
+│ │ E-Motor Assy                | SPR-112  | 1   | 3.500.000 │ │
+│ │ Thermal Sensor              | TS-002   | 1   | 8.658     │ │
+│ └──────────────────────────────────────────────────────────┘ │
+│                                              [+ Add Part]    │
+└──────────────────────────────────────────────────────────────┘
+```
+
+#### Jasa Section
+```
+JASA
+┌──────────────────────────────────────────────────────────────┐
+│ 🔍 Cari jasa...                                              │
+│ ┌──────────────────────────────────────────────────────────┐ │
+│ │ Jasa Name                   | Code       | Qty | Price   │ │
+│ │ Penggantian e-motor         | SERVS-082  | 1   | 495.495 │ │
+│ │ MDT Check                   | SERVS-140  | 1   | 49.550  │ │
+│ └──────────────────────────────────────────────────────────┘ │
+│                                              [+ Add Jasa]    │
+└──────────────────────────────────────────────────────────────┘
+```
+
+#### Total Estimasi
+```
+                    Parts Subtotal: 3.508.658
+                    Jasa Subtotal:    545.045
+                    ────────────────────────
+                    TOTAL ESTIMASI: 4.053.703
+```
+
+**Rules:**
+- Parts carry-over dari PQR (auto-included)
+- Setiap [Add] → row baru dengan searchable dropdown → auto-fill Code + Price
+- Qty default 1, editable
+- Harga = Price include tax dari Price List
+- Running total update real-time
+- Warranty flag per item (✅/❌)
