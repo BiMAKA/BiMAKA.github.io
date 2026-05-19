@@ -173,3 +173,22 @@ Issue Category, Detail Issue, MDT Check, PSG Check, QC Passed, QC Notes
 - MDT/PSG upload required for PQR submit
 - Mech assignment mandatory before advancing from Inspeksi
 - Part numbers from SPR database (235 items, name → code mapping)
+
+---
+
+## Batch Update (Stage 2 Data Pool)
+
+**Fitur:** Update status multiple TRB sekaligus dari Data Pool.
+
+**Rules:**
+- Hanya TRB dengan **status sama** yang bisa di-batch update
+- Checkbox select per TRB (independen dari VIN)
+- Dropdown "Batch Update Status ▼" muncul setelah ≥1 TRB dicentang
+- Status tujuan: Inspeksi → Parts → Repair → QC → Handover → Selesai
+
+**Flow:**
+```
+Data Pool → centang TRB-128, TRB-129, TRB-132
+         → [Batch Update ▼] pilih "Inspeksi"
+         → semua TRB advance ke Inspeksi sekaligus
+```
