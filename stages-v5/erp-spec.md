@@ -246,3 +246,37 @@ Data Pool → centang TRB-128, TRB-129, TRB-132
 ### 5. ERP Retail Integration (TBD)
 - Current: https://erp.maka-retail.com/app/home untuk PO, arrival doc, invoicing
 - Diskusi terpisah dengan Marcos & Dito: integrasi atau standalone
+
+---
+
+## Stage 5 — Parts Estimation (`/orders/{id}/parts`)
+**NEW PAGE** — Setelah PQR submitted, atau dari Order Detail stepper "Parts"
+
+### 1. Parts List per TRB (editable)
+Parts dari PQR auto-included, bisa ditambah/dikurangi mekanik.
+| Part Name | Part Number | Qty | Warranty | Status | Lokasi | ETA |
+- **Part Name**: Searchable dropdown 235 item → auto-fill Part Number
+- **Qty**: Freetext
+- **[+ Tambah Part]**: Button → searchable dropdown + Qty
+- **[✕]**: Remove part dari list
+- Warranty: ✅ / ❌ (auto dari PQR claim)
+
+### 2. Parts Status
+- ✅ Ready — stock di lokasi
+- ⏳ Ordered — PO udah dibuat
+- 🔄 Transfer — request lintas lokasi
+- ❌ No Stock — perlu procurement
+
+### 3. Cost Summary
+- Total parts cost per TRB
+- Warranty vs non-warranty breakdown
+- PQR claim status (approved/pending/denied)
+
+### 4. Actions
+- [← Back to Order Detail]
+- [Request Parts Transfer] → ke Parts page
+- [All Parts Ready → Stage 6 Repair] — disabled kalau ada parts belum ready
+
+### 5. Flags
+- ⚠️ Parts pending → tidak bisa advance ke Repair
+- ✅ All ready → button aktif
