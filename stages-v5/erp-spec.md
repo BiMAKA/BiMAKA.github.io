@@ -434,3 +434,24 @@ Customer tidak lanjut sewa-milik → unit masuk pool Ready-to-Sell:
 ### 5. Konfirmasi
 - [Konfirmasi Handover → Stage 9 Done]
 - WA notification "Unit Siap Ambil" (jika customer take over)
+
+---
+
+## Stage 9 — Done (`/orders/{id}/done`)
+**NEW PAGE** — Dari Order Detail stepper "Selesai". TRB closed, all data locked.
+
+### Summary Final (read-only)
+| Section | Data |
+|---|---|
+| TRB Info | TRB number, VIN, Problem, Tipe Unit |
+| Timeline | 8-step history + timestamps + aging |
+| Mekanik | List mechanic assigned |
+| Parts Digunakan | Part Name, Qty, Price (include tax) |
+| Jasa Dikerjakan | Jasa Name, Qty, Price (include tax) |
+| Total Biaya | Parts subtotal + Jasa subtotal |
+| QC Result | Pass/Fail + Notes |
+| Status Unit | Customer / RTS |
+| SLA | Actual vs Target (✅ if within SLA) |
+
+### Status
+✅ DONE — TRB closed — data locked, tidak bisa diedit
